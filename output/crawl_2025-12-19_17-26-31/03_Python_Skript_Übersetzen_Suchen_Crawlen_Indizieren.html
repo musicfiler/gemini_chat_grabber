@@ -1,0 +1,3558 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Gemini Export</title><style>body{margin:0;padding:0;font-family:'Segoe UI';background:#f0f2f5;height:100vh;display:flex;overflow:hidden;} .sidebar{width:350px;background:#fff;border-right:1px solid #ddd;display:flex;flex-direction:column;flex-shrink:0;} .sidebar-header{padding:15px;border-bottom:1px solid #eee;background:#f8f9fa;} .sidebar-content{flex:1;overflow-y:auto;padding:10px;} .toc-chat-title{font-weight:bold;margin-top:15px;margin-bottom:5px;color:#1a73e8;font-size:0.95rem;padding-left:10px;} .toc-turn-link{display:block;padding:4px 10px;color:#555;text-decoration:none;font-size:0.85rem;border-left:2px solid transparent;margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;} .toc-turn-link:hover{background:#f1f3f4;color:#333;border-left-color:#1a73e8;} .main{flex:1;overflow-y:auto;padding:40px;scroll-behavior:smooth;} .chat-container{max-width:950px;margin:0 auto 60px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);} .chat-meta{padding:20px;border-bottom:1px solid #eee;background:#fff;border-radius:8px 8px 0 0;} .meta-info{font-size:0.9rem;color:#666;margin-top:5px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;} .meta-badge{background:#e8f0fe;color:#1967d2;padding:3px 8px;border-radius:4px;font-weight:bold;font-size:0.8rem;} .turn-container{border-bottom:1px solid #f0f0f0;padding:0;} .turn-header{background:#f8f9fa;padding:8px 20px;font-size:0.75rem;color:#666;font-weight:bold;display:flex;justify-content:space-between;border-bottom:1px solid #f1f1f1;} .turn-id{color:#999;font-family:monospace;} .turn-body{padding:20px;display:flex;flex-direction:column;gap:15px;} .role-user{background:#e8f0fe;border-radius:12px;align-self:flex-start;max-width:90%;border-left:4px solid #1967d2;padding:0;overflow:hidden;} .role-model{background:#ffffff;border-radius:12px;max-width:100%;border:1px solid #eee;padding:0;overflow:hidden;} .role-label{font-size:0.7rem;font-weight:bold;letter-spacing:1px;padding:5px 15px;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,0.05);} .role-label.user{background:rgba(25,103,210,0.1);color:#1967d2;} .role-label.model{background:#f8f9fa;color:#5f6368;} .bubble-content{padding:15px;} .content p{margin-top:0;} img{max-width:100%;border-radius:6px;border:1px solid #ddd;margin-top:10px;}</style></head><body><div class='sidebar'><div class='sidebar-header'><h3>Inhaltsverzeichnis</h3></div><div class='sidebar-content'><div class='toc-chat-title'>Python-Skript: Übersetzen, Suchen, Crawlen, Indizieren</div><a href='#chat_2_turn_1' class='toc-turn-link' title='![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl9wPo4W7y1gO3g0FWjmSI8vTbGUVVZoMrG2qK280zkuGPixA5fUjTpTkR61vCLwR8Qb0zOP6b-PeA8mXcj9yzOUCl6VWniJ-tUkNasl0ZXF2hcMUoL7nJjeMTizQ7mE__LrRzpoPVWD4Yp7-KYFejSX_uQYtrmPjpNvIGYtVQa9s1NBB3A)
+
+Anstatt 20 weiterzusuchen und in der duckduckgo seite zu blättern, hat das Smart Crawl nach 7 validen ergebnissen aufgehört zu suchen.
+
+Bei seiten mit viel javascript und asynchronem inhalt ist der Crawler ins stocken gekommen.
+
+Die Tabelle soll sortierbar sein und nach ID URL Title sortiert werden können.
+
+Das Indizieren von unterseiten war nicht besonders erfolgreich.'>1. Anstatt 20 weiterzusuchen und in der duckduckgo se...</a><a href='#chat_2_turn_2' class='toc-turn-link' title='![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl-znNMRI1TvQTH_SaNTrSx5JDJMw0fPX2IdbjuGvqsGcxUxnH1K10WI_1mu1A0VoOO2SEat76m46P97_4aAHHKaKvVkLq9mCbnL3-xEffsd4ITOM8QYPRsrO7k7XVVbPjVdyGMQMgfqKReb5XmwWw1ttpYjJ8w41yCcRNZPMW2AzpVOuIZ2)'>2. 📷 Dateiprompt</a><a href='#chat_2_turn_3' class='toc-turn-link' title='![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl_8aL2MZ637jix8FHR9Aa9AvZ6I6FzVff82wjZoOJnvLfvT_hmGT61c_2eZdEv9xU1Ogqel7435PtW4KAT_f5M3LxHuJYPA7Fr9MflrogprCSjT6Fw2FGtvnG4tPrcqxLLLVQx7aK99bOySf31nhQo5Rm4D67CpKv01vmpCN3V-KfLRB8bU)
+
+![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl_LiUbKoIpW3k7FNPeHI8P_GQOAc52qSqis2L-pzWJGH6AIYo-8keNrcWN484pN7mezMzL5ZNC3Uzfcz5REW5aSKkdArZVPYZBQodI9Y0jVM4Bhy4AT5UDb4AeU6TZPWkrllgk7LivvvcsN3D2dJYyknll8r9g_l0f7YGbIqpzFehQ0y1xq)
+
+![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl-tWjYi3j5VyQjp9FgbV_tvQtRKBNtMOYeelR8BXOQKYFICt_Jf_U-sWhiuxSYZ_S1Zb-jsAUq2qDsKrivrXeSQ7m3MxWoXE6EKzcaFqOLTfzqsZzjSvOCm37CmGddFCJm5hCqW0-Lwp4QnG3p2eCYjHpV_bNjZC0Dun-V14hfNmtr3uU-Q)
+
+![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl-9rjVCEjIFFxq0sW9mjpQQS7ZmoPG_YNY4mT_ogIwrCwUPdYhctG_wcbn8guQHa7w_ToSm81yaUuDE9pGHYZfSz9_kBwERv7vQyzdvrTB0Acz3jAk21b03RW1OYilJIwWDrUObKcHAxEyoPPmquYY16hMXsN48t5UQgc-mE-5ZHfvxLyGw)
+
+![Vorschau des hochgeladenen Bildes](https://lh3.googleusercontent.com/gg/AIJ2gl_xsTdMTliACfgM94rqrVwZO62ArpeTtH-FBO_l1ndb8f0IG_kkljTuONO27yWOYOrIjrqYaw4ijMhTZAkAQuEivk1b20pUy0C57YlFme0sF_w5XfM_fsTyWNDUMAatEWdFnD8sFpjD11NSd33ts-F1aR3CsSOtMYwNc6Oe8Y7XX7l_MFM)
+
+Imnplementiere diese Lösung in den folgenden Code:
+
+import tkinter as tk
+
+from tkinter import ttk, scrolledtext, messagebox, Menu, filedialog, Toplevel
+
+import threading
+
+import time
+
+import sys
+
+import webbrowser
+
+import socket
+
+import mysql.connector
+
+from mysql.connector import errorcode
+
+import html
+
+import json
+
+import os
+
+import warnings
+
+import re
+
+import pandas as pd
+
+import trafilatura
+
+from langdetect import detect, detect\_langs, LangDetectException
+
+import networkx as nx
+
+from matplotlib.backends.backend\_tkagg import FigureCanvasTkAgg
+
+import matplotlib.pyplot as plt
+
+import asyncio
+
+import base64
+
+from datetime import datetime
+
+from bs4 import BeautifulSoup
+
+# --- 1. CRITICAL SETUP &amp; GLOBALS ---
+
+sys.stdout.reconfigure(encoding=&#x27;utf-8&#x27;)
+
+os.environ[&quot;PYTHONWARNINGS&quot;] = &quot;ignore&quot;
+
+warnings.simplefilter(action=&#x27;ignore&#x27;, category=FutureWarning)
+
+warnings.simplefilter(action=&#x27;ignore&#x27;, category=UserWarning)
+
+# Globaler Pfad für Chrome Profil
+
+CHROME\_USER\_DATA\_DIR = os.path.join(os.getenv(&#x27;LOCALAPPDATA&#x27;), &#x27;Google&#x27;, &#x27;Chrome&#x27;,
+
+&#x27;User Data&#x27;) if os.name == &#x27;nt&#x27; else &quot;&quot;
+
+# --- 2. IMPORTS ---
+
+try:
+
+import socks
+
+except ImportError:
+
+pass
+
+try:
+
+from duckduckgo\_search import DDGS
+
+except ImportError:
+
+try:
+
+from ddgs import DDGS
+
+except ImportError:
+
+pass
+
+from deep\_translator import GoogleTranslator
+
+from playwright.sync\_api import sync\_playwright
+
+CRAWL4AI\_AVAILABLE = False
+
+try:
+
+from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+
+CRAWL4AI\_AVAILABLE = True
+
+except ImportError:
+
+pass
+
+# ---------------------------------------------------------
+
+# 3. KONFIGURATION
+
+# ---------------------------------------------------------
+
+CONFIG\_FILE = &quot;crawler\_config.json&quot;
+
+DEFAULT\_CONFIG = {
+
+&quot;db\_host&quot;: &quot;localhost&quot;, &quot;db\_port&quot;: &quot;3306&quot;,
+
+&quot;db\_user&quot;: &quot;root&quot;, &quot;db\_password&quot;: &quot;&quot;,
+
+&quot;db\_name&quot;: &quot;search\_index\_v3&quot;, &quot;tor\_port&quot;: &quot;9050&quot;
+
+}
+
+REGION\_MAPPING = {
+
+&#x27;de&#x27;: {&#x27;ddg&#x27;: &#x27;de-de&#x27;, &#x27;locale&#x27;: &#x27;de-DE&#x27;, &#x27;header&#x27;: &#x27;de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7&#x27;},
+
+&#x27;en&#x27;: {&#x27;ddg&#x27;: &#x27;us-en&#x27;, &#x27;locale&#x27;: &#x27;en-US&#x27;, &#x27;header&#x27;: &#x27;en-US,en;q=0.9&#x27;},
+
+&#x27;fr&#x27;: {&#x27;ddg&#x27;: &#x27;fr-fr&#x27;, &#x27;locale&#x27;: &#x27;fr-FR&#x27;, &#x27;header&#x27;: &#x27;fr-FR,fr;q=0.9,en;q=0.8&#x27;},
+
+&#x27;es&#x27;: {&#x27;ddg&#x27;: &#x27;es-es&#x27;, &#x27;locale&#x27;: &#x27;es-ES&#x27;, &#x27;header&#x27;: &#x27;es-ES,es;q=0.9,en;q=0.8&#x27;},
+
+&#x27;it&#x27;: {&#x27;ddg&#x27;: &#x27;it-it&#x27;, &#x27;locale&#x27;: &#x27;it-IT&#x27;, &#x27;header&#x27;: &#x27;it-IT,it;q=0.9,en;q=0.8&#x27;},
+
+&#x27;cn&#x27;: {&#x27;ddg&#x27;: &#x27;cn-zh&#x27;, &#x27;locale&#x27;: &#x27;zh-CN&#x27;, &#x27;header&#x27;: &#x27;zh-CN,zh;q=0.9,en;q=0.8&#x27;}
+
+}
+
+DEFAULT\_REGION\_CFG = {&#x27;ddg&#x27;: &#x27;wt-wt&#x27;, &#x27;locale&#x27;: &#x27;en-US&#x27;, &#x27;header&#x27;: &#x27;en-US,en;q=0.9&#x27;}
+
+DOMAIN\_BLACKLIST = [
+
+&quot;zhihu.com&quot;, &quot;bilibili.com&quot;, &quot;facebook.com&quot;, &quot;twitter.com&quot;, &quot;instagram.com&quot;,
+
+&quot;youtube.com&quot;, &quot;tiktok.com&quot;, &quot;linkedin.com&quot;, &quot;google.com&quot;, &quot;duckduckgo.com&quot;,
+
+&quot;bing.com&quot;, &quot;yahoo.com&quot;, &quot;baidu.com&quot;, &quot;yandex.com&quot;
+
+]
+
+JUNK\_PATTERNS = [
+
+r&#x27;/login&#x27;, r&#x27;/signin&#x27;, r&#x27;/signup&#x27;, r&#x27;/register&#x27;, r&#x27;/auth&#x27;,
+
+r&#x27;403 forbidden&#x27;, r&#x27;access denied&#x27;, r&#x27;captcha&#x27;, r&#x27;verify you are a human&#x27;,
+
+r&#x27;security check&#x27;, r&#x27;cloudﬂare&#x27;, r&#x27;{&quot;message&quot;:&#x27;, r&#x27;password&#x27;,
+
+r&#x27;forgot-password&#x27;, r&#x27;reset-password&#x27;
+
+]
+
+# ---------------------------------------------------------
+
+# 4. UTILS &amp; QUALITY GATE
+
+# ---------------------------------------------------------
+
+class ToolTip:
+
+def \_\_init\_\_(self, widget, text):
+
+self.widget = widget;
+
+self.text = text;
+
+self.tip\_window = None
+
+widget.bind(&quot;&lt;Enter&gt;&quot;, self.show\_tip);
+
+widget.bind(&quot;&lt;Leave&gt;&quot;, self.hide\_tip)
+
+def show\_tip(self, event=None):
+
+if self.tip\_window or not self.text: return
+
+x, y, \_, \_ = self.widget.bbox(&quot;insert&quot;)
+
+x += self.widget.winfo\_rootx() + 25;
+
+y += self.widget.winfo\_rooty() + 25
+
+self.tip\_window = tw = Toplevel(self.widget);
+
+tw.wm\_overrideredirect(True);
+
+tw.wm\_geometry(f&quot;+{x}+{y}&quot;)
+
+tk.Label(tw, text=self.text, justify=tk.LEFT, background=&quot;#ffffe0&quot;, relief=tk.SOLID, borderwidth=1,
+
+font=(&quot;tahoma&quot;, &quot;8&quot;, &quot;normal&quot;)).pack(ipadx=1)
+
+def hide\_tip(self, event=None):
+
+if self.tip\_window: self.tip\_window.destroy(); self.tip\_window = None
+
+def load\_config():
+
+if os.path.exists(CONFIG\_FILE):
+
+try:
+
+return json.load(open(CONFIG\_FILE, &#x27;r&#x27;))
+
+except:
+
+return DEFAULT\_CONFIG
+
+return DEFAULT\_CONFIG
+
+def save\_config\_to\_file(data): json.dump(data, open(CONFIG\_FILE, &#x27;w&#x27;), indent=4)
+
+def setup\_proxy(use\_tor, port, log\_func):
+
+try:
+
+if use\_tor:
+
+socks.set\_default\_proxy(socks.SOCKS5, &quot;localhost&quot;, port);
+
+socket.socket = socks.socksocket
+
+log\_func(f&quot;[NET] Tor Proxy (:{port}) aktiv.&quot;)
+
+else:
+
+socks.set\_default\_proxy();
+
+socket.socket = socket.\_socketobject if hasattr(socket, &quot;\_socketobject&quot;) else socket.socket
+
+log\_func(&quot;[NET] Direkte Verbindung.&quot;)
+
+except Exception as e:
+
+log\_func(f&quot;[NET ERR] {e}&quot;)
+
+class QualityGate:
+
+@staticmethod
+
+def is\_url\_allowed(url):
+
+if not url or not url.startswith(&quot;http&quot;): return False
+
+url\_lower = url.lower()
+
+for d in DOMAIN\_BLACKLIST:
+
+if d in url\_lower: return False
+
+for p in JUNK\_PATTERNS:
+
+if p.startswith(&quot;/&quot;) and p in url\_lower: return False
+
+return True
+
+@staticmethod
+
+def is\_junk\_content(title, content):
+
+combined = (title + &quot; &quot; + content).lower()[:1500]
+
+for p in JUNK\_PATTERNS:
+
+if p.replace(&quot;/&quot;, &quot;&quot;) in combined: return True
+
+return False
+
+@staticmethod
+
+def contains\_keyword(content, keyword):
+
+if not keyword or not content: return True
+
+return keyword.lower() in content.lower()
+
+@staticmethod
+
+def check\_language(text, html\_raw, target\_lang):
+
+# 1. HTML Meta Check
+
+if html\_raw:
+
+try:
+
+soup = BeautifulSoup(html\_raw, &#x27;html.parser&#x27;)
+
+html\_tag = soup.find(&#x27;html&#x27;)
+
+if html\_tag and html\_tag.has\_attr(&#x27;lang&#x27;):
+
+if html\_tag[&#x27;lang&#x27;].lower().startswith(target\_lang): return True, &quot;Meta-Tag Match&quot;
+
+except:
+
+pass
+
+# 2. Text Analyse
+
+if len(text) &lt; 150: return True, &quot;Short (Pass)&quot;
+
+try:
+
+langs = detect\_langs(text)
+
+if langs[0].lang.startswith(target\_lang): return True, f&quot;Text ({langs[0].prob:.2f})&quot;
+
+if target\_lang in [&#x27;de&#x27;, &#x27;en&#x27;, &#x27;fr&#x27;, &#x27;es&#x27;] and langs[0].lang in [&#x27;ru&#x27;, &#x27;zh-cn&#x27;, &#x27;ja&#x27;, &#x27;ar&#x27;]:
+
+return False, f&quot;Wrong Lang: {langs[0].lang}&quot;
+
+except:
+
+pass
+
+return True, &quot;Fallback&quot;
+
+# ---------------------------------------------------------
+
+# 5. DATABASE MANAGER
+
+# ---------------------------------------------------------
+
+class DatabaseManager:
+
+def \_\_init\_\_(self, logger\_func, config):
+
+self.log = logger\_func;
+
+self.config = config;
+
+self.conn = None;
+
+self.cursor = None
+
+def connect(self):
+
+try:
+
+self.conn = mysql.connector.connect(
+
+user=self.config[&#x27;db\_user&#x27;], password=self.config[&#x27;db\_password&#x27;],
+
+host=self.config[&#x27;db\_host&#x27;], port=int(self.config[&#x27;db\_port&#x27;]),
+
+database=self.config[&#x27;db\_name&#x27;], raise\_on\_warnings=True
+
+)
+
+self.cursor = self.conn.cursor();
+
+self.create\_tables();
+
+return True
+
+except mysql.connector.Error as err:
+
+if err.errno == errorcode.ER\_BAD\_DB\_ERROR:
+
+if self.\_create\_db(): return self.connect()
+
+if self.log: self.log(f&quot;[DB ERR] {err}&quot;)
+
+return False
+
+def \_create\_db(self):
+
+try:
+
+c = mysql.connector.connect(user=self.config[&#x27;db\_user&#x27;], password=self.config[&#x27;db\_password&#x27;],
+
+host=self.config[&#x27;db\_host&#x27;], port=int(self.config[&#x27;db\_port&#x27;]))
+
+c.cursor().execute(f&quot;CREATE DATABASE IF NOT EXISTS {self.config[&#x27;db\_name&#x27;]} DEFAULT CHARACTER SET utf8mb4&quot;)
+
+c.close();
+
+return True
+
+except:
+
+return False
+
+def get\_conn\_pandas(self):
+
+try:
+
+return mysql.connector.connect(user=self.config[&#x27;db\_user&#x27;], password=self.config[&#x27;db\_password&#x27;],
+
+host=self.config[&#x27;db\_host&#x27;], port=int(self.config[&#x27;db\_port&#x27;]),
+
+database=self.config[&#x27;db\_name&#x27;])
+
+except:
+
+return None
+
+def create\_tables(self):
+
+try:
+
+self.cursor.execute(
+
+&quot;CREATE TABLE IF NOT EXISTS search\_runs (id INT AUTO\_INCREMENT PRIMARY KEY, query VARCHAR(255), lang VARCHAR(10), mode VARCHAR(50), created\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP)&quot;)
+
+self.cursor.execute(&quot;&quot;&quot;
+
+CREATE TABLE IF NOT EXISTS crawled\_data
+
+(
+
+id
+
+INT
+
+AUTO\_INCREMENT
+
+PRIMARY
+
+KEY,
+
+run\_id
+
+INT,
+
+parent\_id
+
+INT
+
+DEFAULT
+
+NULL,
+
+url
+
+VARCHAR
+
+(
+
+768
+
+), title TEXT, description TEXT, raw\_content MEDIUMTEXT, escaped\_content MEDIUMTEXT,
+
+depth\_level INT DEFAULT 0, search\_rank INT DEFAULT 0, is\_link\_list BOOLEAN DEFAULT FALSE,
+
+crawled\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP, FOREIGN KEY
+
+(
+
+run\_id
+
+) REFERENCES search\_runs
+
+(
+
+id
+
+)
+
+)
+
+&quot;&quot;&quot;)
+
+self.conn.commit()
+
+except:
+
+pass
+
+def url\_exists(self, url, run\_id):
+
+try:
+
+self.cursor.execute(&quot;SELECT id FROM crawled\_data WHERE url = %s AND run\_id = %s&quot;, (url, run\_id))
+
+res = self.cursor.fetchone()
+
+return res[0] if res else None
+
+except:
+
+return None
+
+def save\_node(self, run\_id, parent\_id, url, title, desc, content, depth, rank, is\_list=False):
+
+try:
+
+eid = self.url\_exists(url, run\_id)
+
+if eid: return eid, True
+
+esc = html.escape(content) if content else &quot;&quot;
+
+self.cursor.execute(&quot;&quot;&quot;
+
+INSERT INTO crawled\_data (run\_id, parent\_id, url, title, description, raw\_content,
+
+escaped\_content, depth\_level, search\_rank, is\_link\_list)
+
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)&quot;&quot;&quot;,
+
+(run\_id, parent\_id, url, title, desc, content, esc, depth, rank, is\_list))
+
+self.conn.commit();
+
+return self.cursor.lastrowid, False
+
+except:
+
+return None, False
+
+def close(self):
+
+if self.conn: self.conn.close()
+
+# ---------------------------------------------------------
+
+# 6. UNIVERSAL CRAWLER WORKER (FIXED SYNTAX)
+
+# ---------------------------------------------------------
+
+class UniversalCrawlerWorker:
+
+def \_\_init\_\_(self, cfg, log):
+
+self.cfg = cfg; self.log = log
+
+def run(self, params):
+
+query = params[&#x27;query&#x27;];
+
+source = params[&#x27;source&#x27;];
+
+langs = params[&#x27;langs&#x27;]
+
+use\_tor = params[&#x27;tor&#x27;];
+
+visible = params[&#x27;visible&#x27;];
+
+trans = params[&#x27;trans&#x27;]
+
+smart\_filter = params[&#x27;smart&#x27;];
+
+strict\_keyword = params[&#x27;strict&#x27;]
+
+mode\_depth = params[&#x27;mode\_depth&#x27;];
+
+recursive = params[&#x27;recursive&#x27;];
+
+target\_valid = params[&#x27;target\_valid&#x27;]
+
+tor\_port = int(self.cfg.get(&quot;tor\_port&quot;, 9050))
+
+setup\_proxy(use\_tor, tor\_port, self.log)
+
+db = DatabaseManager(self.log, self.cfg)
+
+if not db.connect(): return
+
+with sync\_playwright() as p:
+
+proxy = {&quot;server&quot;: f&quot;socks5://localhost:{tor\_port}&quot;} if use\_tor else None
+
+browser = p.chromium.launch(headless=not visible, proxy=proxy,
+
+args=[&quot;--start-maximized&quot;, &quot;--disable-blink-features=AutomationControlled&quot;])
+
+loop\_langs = langs if source == &quot;search&quot; else [&quot;direct&quot;]
+
+for lang in loop\_langs:
+
+l\_cfg = REGION\_MAPPING.get(lang)
+
+if not isinstance(l\_cfg, dict): l\_cfg = DEFAULT\_REGION\_CFG
+
+context = browser.new\_context(
+
+viewport={&quot;width&quot;: 1280, &quot;height&quot;: 800},
+
+locale=l\_cfg[&#x27;locale&#x27;], timezone\_id=&#x27;UTC&#x27;,
+
+extra\_http\_headers={&quot;Accept-Language&quot;: l\_cfg[&#x27;header&#x27;]}
+
+)
+
+context.add\_init\_script(&quot;Object.defineProperty(navigator, &#x27;webdriver&#x27;, {get: () =&gt; undefined})&quot;)
+
+# --- BLOCK MEDIA ---
+
+def block\_media(route):
+
+if route.request.resource\_type in [&quot;image&quot;, &quot;media&quot;, &quot;font&quot;]:
+
+try:
+
+route.abort()
+
+except:
+
+pass
+
+else:
+
+try:
+
+route.continue\_()
+
+except:
+
+pass
+
+context.route(&quot;\*\*/\*&quot;, block\_media)
+
+queue\_items = []
+
+# PHASE 1: QUEUE FILL
+
+if source == &quot;search&quot;:
+
+self.log(f&quot;--- SUCHE {lang.upper()} (Ziel: {target\_valid}) ---&quot;)
+
+term = query
+
+if trans and lang != &#x27;de&#x27;:
+
+try:
+
+term = GoogleTranslator(source=&#x27;auto&#x27;, target=lang).translate(query)
+
+except:
+
+pass
+
+try:
+
+db.cursor.execute(&quot;INSERT INTO search\_runs (query, lang, mode) VALUES (%s, %s, %s)&quot;,
+
+(term, lang,
+
+f&quot;mode\_{mode\_depth}&quot;)); run\_id = db.cursor.lastrowid; db.conn.commit()
+
+except:
+
+continue
+
+if visible:
+
+self.log(&quot;[VISUAL] Starte Browser-Suche...&quot;)
+
+try:
+
+s\_page = context.new\_page()
+
+ddg\_url = f&quot;https://duckduckgo.com/?q={term}&amp;kl={l\_cfg[&#x27;ddg&#x27;]}&amp;t=h\_&quot;
+
+s\_page.goto(ddg\_url)
+
+# Warte auf Titel-Links
+
+try:
+
+s\_page.wait\_for\_selector(&quot;a[data-testid=&#x27;result-title-a&#x27;]&quot;, timeout=10000)
+
+except:
+
+self.log(&quot; -&gt; Timeout bei DuckDuckGo Load&quot;)
+
+links = s\_page.locator(&quot;a[data-testid=&#x27;result-title-a&#x27;]&quot;).all()
+
+cnt = 0
+
+for link in links:
+
+if cnt &gt;= target\_valid \* 3: break
+
+try:
+
+href = link.get\_attribute(&quot;href&quot;)
+
+txt = link.inner\_text()
+
+if href and QualityGate.is\_url\_allowed(href):
+
+queue\_items.append((href, txt, cnt + 1, 0, None))
+
+cnt += 1
+
+except:
+
+pass
+
+s\_page.close()
+
+self.log(f&quot; -&gt; {len(queue\_items)} Roh-Links gefunden.&quot;)
+
+except Exception as e:
+
+self.log(f&quot;[VISUAL ERR] {e}&quot;)
+
+else:
+
+try:
+
+with DDGS() as ddgs:
+
+res = list(
+
+ddgs.text(term, region=l\_cfg.get(&#x27;ddg&#x27;, &#x27;wt-wt&#x27;), max\_results=target\_valid \* 3,
+
+backend=&quot;html&quot;))
+
+for idx, r in enumerate(res):
+
+if QualityGate.is\_url\_allowed(r[&#x27;href&#x27;]):
+
+queue\_items.append((r[&#x27;href&#x27;], r[&#x27;title&#x27;], idx + 1, 0, None))
+
+except Exception as e:
+
+self.log(f&quot;[API ERR] {e}&quot;)
+
+else:
+
+self.log(f&quot;--- DIREKT ---&quot;)
+
+urls = get\_urls\_from\_input(query, self.log)
+
+if not urls: break
+
+try:
+
+db.cursor.execute(&quot;INSERT INTO search\_runs (query, lang, mode) VALUES (%s, &#x27;raw&#x27;, &#x27;direct&#x27;)&quot;,
+
+(os.path.basename(query)[
+
+:50],)); run\_id = db.cursor.lastrowid; db.conn.commit()
+
+except:
+
+continue
+
+for i, u in enumerate(urls): queue\_items.append((u, &quot;Start URL&quot;, i + 1, 0, None))
+
+# PHASE 2: CRAWLING
+
+visited = set()
+
+valid\_cnt = 0
+
+while queue\_items:
+
+if source == &quot;search&quot; and valid\_cnt &gt;= target\_valid:
+
+self.log(f&quot;\*\*\* ZIEL ERREICHT \*\*\*&quot;);
+
+break
+
+u, t, r, d, pid = queue\_items.pop(0)
+
+if u in visited: continue
+
+visited.add(u)
+
+if db.url\_exists(u, run\_id):
+
+self.log(f&quot; -&gt; [SKIP] DB: {u[:30]}...&quot;)
+
+valid\_cnt += 1;
+
+continue
+
+self.log(f&quot;[NODE D{d}] {u[:40]}...&quot;)
+
+content = &quot;&quot;;
+
+desc = &quot;&quot;;
+
+child\_links = []
+
+should\_visit = (mode\_depth &gt;= 1) or (d &gt; 0)
+
+if should\_visit:
+
+try:
+
+page = context.new\_page()
+
+page.set\_extra\_http\_headers({&quot;Accept-Language&quot;: l\_cfg[&#x27;header&#x27;]})
+
+try:
+
+page.goto(u, timeout=35000, wait\_until=&quot;domcontentloaded&quot;)
+
+except:
+
+try:
+
+page.close()
+
+except:
+
+pass
+
+continue
+
+p\_content = page.content()
+
+p\_text = page.evaluate(&quot;document.body.innerText&quot;)
+
+p\_title = page.title()
+
+if QualityGate.is\_junk\_content(p\_title, p\_text):
+
+self.log(&quot; -&gt; [DROP] Junk/Login&quot;)
+
+page.close()
+
+continue
+
+if source == &quot;search&quot; and smart\_filter:
+
+ok, msg = QualityGate.check\_language(p\_text, p\_content, lang)
+
+if not ok:
+
+self.log(f&quot; -&gt; [DROP] {msg}&quot;)
+
+page.close()
+
+continue
+
+if source == &quot;search&quot; and strict\_keyword and query:
+
+if not QualityGate.contains\_keyword(p\_text, query):
+
+self.log(&quot; -&gt; [DROP] Keyword fehlt.&quot;)
+
+page.close()
+
+continue
+
+if mode\_depth &gt;= 1: desc = page.locator(&#x27;meta[name=&quot;description&quot;]&#x27;).get\_attribute(
+
+&quot;content&quot;) or &quot;&quot;
+
+if mode\_depth &gt;= 2: content = trafilatura.extract(p\_content) or &quot;&quot;
+
+max\_tree = 1 if mode\_depth == 3 else 2 if mode\_depth == 4 else 0
+
+limit = 3 if recursive else max\_tree
+
+if d &lt; limit:
+
+hrefs = page.evaluate(&quot;Array.from(document.links).map(a =&gt; a.href)&quot;)
+
+for h in hrefs:
+
+if h.startswith(&quot;http&quot;) and QualityGate.is\_url\_allowed(h): child\_links.append(h)
+
+page.close()
+
+except Exception as e:
+
+self.log(f&quot; -&gt; [ERR] {e}&quot;)
+
+try:
+
+page.close()
+
+except:
+
+pass
+
+node\_id, exists = db.save\_node(run\_id, pid, u, t, desc, content, d, r,
+
+is\_list=(len(child\_links) &gt; 0))
+
+if exists:
+
+self.log(&quot; -&gt; [DUP]&quot;);
+
+valid\_cnt += 1
+
+elif node\_id:
+
+self.log(f&quot; -&gt; [SAVED] {len(content)} Chars&quot;)
+
+valid\_cnt += 1
+
+if child\_links:
+
+cnt = 0
+
+for l in child\_links:
+
+if cnt &lt; 20: queue\_items.append((l, &quot;Link&quot;, r, d + 1, node\_id)); cnt += 1
+
+context.close()
+
+browser.close()
+
+db.close();
+
+self.log(&quot;--- FINISHED ---&quot;)
+
+# ---------------------------------------------------------
+
+# GUI COMPONENTEN
+
+# ---------------------------------------------------------
+
+class UniversalCrawlerTab(ttk.Frame):
+
+def \_\_init\_\_(self, parent, app):
+
+super().\_\_init\_\_(parent);
+
+self.app = app;
+
+self.setup\_ui()
+
+def setup\_ui(self):
+
+pnl = ttk.LabelFrame(self, text=&quot;Konfiguration&quot;, padding=10);
+
+pnl.pack(fill=&quot;x&quot;, padx=10, pady=5)
+
+self.v\_src = tk.StringVar(value=&quot;search&quot;)
+
+r1 = ttk.Radiobutton(pnl, text=&quot;🔍 Suche&quot;, variable=self.v\_src, value=&quot;search&quot;, command=self.upd);
+
+r1.grid(row=0, column=0)
+
+ToolTip(r1, &quot;Nutzt DuckDuckGo (API oder Browser) um URLs zu finden.&quot;)
+
+r2 = ttk.Radiobutton(pnl, text=&quot;📂 Direkt/Datei&quot;, variable=self.v\_src, value=&quot;direct&quot;, command=self.upd);
+
+r2.grid(row=0, column=1)
+
+ToolTip(r2, &quot;Crawlt eine spezifische URL oder eine Liste aus einer .txt Datei.&quot;)
+
+ttk.Label(pnl, text=&quot;Input:&quot;).grid(row=0, column=2, padx=(10, 0));
+
+self.e\_in = ttk.Entry(pnl, width=30);
+
+self.e\_in.grid(row=0, column=3)
+
+self.b\_file = ttk.Button(pnl, text=&quot;...&quot;, width=3, command=self.pick, state=&quot;disabled&quot;);
+
+self.b\_file.grid(row=0, column=4)
+
+ttk.Label(pnl, text=&quot;Sprachen:&quot;).grid(row=0, column=5, padx=(10, 0));
+
+self.e\_l = ttk.Entry(pnl, width=10);
+
+self.e\_l.insert(0, &quot;de,en&quot;);
+
+self.e\_l.grid(row=0, column=6)
+
+ToolTip(self.e\_l, &quot;Kommagetrennt (de,en,fr). Nur für Suchmodus relevant.&quot;)
+
+frame\_mode = ttk.Frame(pnl);
+
+frame\_mode.grid(row=1, columnspan=7, pady=10, sticky=&quot;w&quot;)
+
+ttk.Label(frame\_mode, text=&quot;Modus:&quot;).pack(side=&quot;left&quot;)
+
+self.cb\_mode = ttk.Combobox(frame\_mode,
+
+values=[&quot;0: Nur URLs sammeln&quot;, &quot;1: + Meta Beschreibung&quot;, &quot;2: + Volltext (Content)&quot;,
+
+&quot;3: + Linkliste (Level 1)&quot;, &quot;4: + Deep Links (Level 2)&quot;], width=30);
+
+self.cb\_mode.current(2);
+
+self.cb\_mode.pack(side=&quot;left&quot;, padx=5)
+
+ToolTip(self.cb\_mode,
+
+&quot;Bestimmt, wie tief eine gefundene Seite analysiert wird.\n3 &amp; 4 erstellen Baumstrukturen.&quot;)
+
+self.v\_rec = tk.BooleanVar(value=False);
+
+c\_rec = ttk.Checkbutton(frame\_mode, text=&quot;Rekursiv&quot;, variable=self.v\_rec);
+
+c\_rec.pack(side=&quot;left&quot;, padx=10)
+
+ToolTip(c\_rec, &quot;Wenn aktiv, werden gefundene Links erneut gescannt (entsprechend dem Modus).&quot;)
+
+ttk.Label(frame\_mode, text=&quot;Ziel (Valid):&quot;).pack(side=&quot;left&quot;, padx=(10, 0));
+
+self.s\_valid = ttk.Spinbox(frame\_mode, from\_=1, to=1000, width=5);
+
+self.s\_valid.set(20);
+
+self.s\_valid.pack(side=&quot;left&quot;)
+
+ToolTip(self.s\_valid, &quot;Crawler sucht so lange weiter, bis diese Anzahl an ECHTEN Treffern erreicht ist.&quot;)
+
+frame\_opt = ttk.Frame(pnl);
+
+frame\_opt.grid(row=2, columnspan=7, pady=5, sticky=&quot;w&quot;)
+
+self.v\_vis = tk.BooleanVar(value=True);
+
+c1 = ttk.Checkbutton(frame\_opt, text=&quot;Sichtbar&quot;, variable=self.v\_vis);
+
+c1.pack(side=&quot;left&quot;)
+
+ToolTip(c1, &quot;Zeigt den Browser an. Wichtig für Visuelle Suche.&quot;)
+
+self.v\_tor = tk.BooleanVar(value=False);
+
+c2 = ttk.Checkbutton(frame\_opt, text=&quot;Tor&quot;, variable=self.v\_tor);
+
+c2.pack(side=&quot;left&quot;, padx=5)
+
+ToolTip(c2, &quot;Leitet Traffic über Tor (SOCKS5).&quot;)
+
+self.v\_tr = tk.BooleanVar(value=False);
+
+c3 = ttk.Checkbutton(frame\_opt, text=&quot;Übersetzen&quot;, variable=self.v\_tr);
+
+c3.pack(side=&quot;left&quot;, padx=5)
+
+ToolTip(c3, &quot;Übersetzt den Suchbegriff automatisch.&quot;)
+
+self.v\_sm = tk.BooleanVar(value=True);
+
+c4 = ttk.Checkbutton(frame\_opt, text=&quot;Smart Filter&quot;, variable=self.v\_sm);
+
+c4.pack(side=&quot;left&quot;, padx=5)
+
+ToolTip(c4, &quot;Filtert falsche Sprachen und Müll-Seiten.&quot;)
+
+self.v\_strict = tk.BooleanVar(value=True);
+
+c5 = ttk.Checkbutton(frame\_opt, text=&quot;Zwang: Keyword&quot;, variable=self.v\_strict);
+
+c5.pack(side=&quot;left&quot;, padx=5)
+
+ToolTip(c5, &quot;Speichert NUR, wenn das Suchwort im Text der Seite vorkommt.&quot;)
+
+ttk.Button(pnl, text=&quot;🚀 STARTEN&quot;, command=self.run).grid(row=0, column=7, rowspan=3, padx=10, sticky=&quot;nsew&quot;)
+
+self.log\_txt = scrolledtext.ScrolledText(self, height=15, bg=&quot;black&quot;, fg=&quot;lime&quot;);
+
+self.log\_txt.pack(fill=&quot;both&quot;, expand=True, padx=10)
+
+def log(self, m):
+
+self.log\_txt.insert(tk.END, m + &quot;\n&quot;); self.log\_txt.see(tk.END)
+
+def pick(self):
+
+f = filedialog.askopenfilename();
+
+if f: self.e\_in.delete(0, tk.END); self.e\_in.insert(0, f)
+
+def upd(self):
+
+if self.v\_src.get() == &quot;direct&quot;:
+
+self.b\_file.config(state=&quot;normal&quot;); self.e\_l.config(state=&quot;disabled&quot;); self.v\_strict.set(False)
+
+else:
+
+self.b\_file.config(state=&quot;disabled&quot;); self.e\_l.config(state=&quot;normal&quot;)
+
+def run(self):
+
+params = {
+
+&#x27;query&#x27;: self.e\_in.get(), &#x27;source&#x27;: self.v\_src.get(), &#x27;langs&#x27;: self.e\_l.get().split(&#x27;,&#x27;),
+
+&#x27;tor&#x27;: self.v\_tor.get(), &#x27;visible&#x27;: self.v\_vis.get(), &#x27;trans&#x27;: self.v\_tr.get(),
+
+&#x27;smart&#x27;: self.v\_sm.get(), &#x27;strict&#x27;: self.v\_strict.get(),
+
+&#x27;mode\_depth&#x27;: int(self.cb\_mode.get().split(&quot;:&quot;)[0]),
+
+&#x27;recursive&#x27;: self.v\_rec.get(), &#x27;target\_valid&#x27;: int(self.s\_valid.get())
+
+}
+
+w = UniversalCrawlerWorker(self.app.app\_config, self.log)
+
+threading.Thread(target=w.run, args=(params,), daemon=True).start()
+
+class VisuTab(ttk.Frame):
+
+def \_\_init\_\_(self, parent, app):
+
+super().\_\_init\_\_(parent);
+
+self.app = app;
+
+self.df = None;
+
+self.setup\_ui()
+
+def setup\_ui(self):
+
+top = ttk.Frame(self);
+
+top.pack(fill=&quot;x&quot;, padx=10);
+
+ttk.Button(top, text=&quot;Laden&quot;, command=self.load).pack(side=&quot;left&quot;)
+
+self.nb = ttk.Notebook(self);
+
+self.nb.pack(fill=&quot;both&quot;, expand=True)
+
+self.tab\_tbl = ttk.Frame(self.nb);
+
+self.nb.add(self.tab\_tbl, text=&quot;Tabelle&quot;)
+
+tbl\_frame = ttk.Frame(self.tab\_tbl);
+
+tbl\_frame.pack(fill=&quot;both&quot;, expand=True)
+
+self.tree = ttk.Treeview(tbl\_frame, columns=(&quot;ID&quot;, &quot;PID&quot;, &quot;URL&quot;, &quot;Title&quot;), show=&quot;headings&quot;);
+
+self.tree.pack(side=&quot;left&quot;, fill=&quot;both&quot;, expand=True)
+
+sc = ttk.Scrollbar(tbl\_frame, orient=&quot;vertical&quot;, command=self.tree.yview);
+
+sc.pack(side=&quot;right&quot;, fill=&quot;y&quot;);
+
+self.tree.configure(yscroll=sc.set)
+
+for c in (&quot;ID&quot;, &quot;PID&quot;, &quot;URL&quot;, &quot;Title&quot;): self.tree.heading(c, text=c)
+
+self.tree.bind(&quot;&lt;&lt;TreeviewSelect&gt;&gt;&quot;, self.on\_tbl\_sel)
+
+self.ctx\_menu = Menu(self, tearoff=0)
+
+self.ctx\_menu.add\_command(label=&quot;Deep Crawl (mit Keyword)&quot;, command=lambda: self.launch\_deep(True))
+
+self.ctx\_menu.add\_command(label=&quot;Sitemap / Full Scan (ohne Keyword)&quot;, command=lambda: self.launch\_deep(False))
+
+self.tree.bind(&quot;&lt;Button-3&gt;&quot;, self.show\_ctx)
+
+self.txt\_preview = scrolledtext.ScrolledText(self.tab\_tbl, height=10, bg=&quot;#eee&quot;);
+
+self.txt\_preview.pack(fill=&quot;x&quot;, padx=5, pady=5)
+
+self.tab\_graph = ttk.Frame(self.nb);
+
+self.nb.add(self.tab\_graph, text=&quot;Baum-Graph&quot;)
+
+self.canv = ttk.Frame(self.tab\_graph);
+
+self.canv.pack(fill=&quot;both&quot;, expand=True)
+
+def load(self):
+
+db = DatabaseManager(None, self.app.app\_config);
+
+conn = db.get\_conn\_pandas()
+
+if not conn: return
+
+self.df = pd.read\_sql(
+
+&quot;SELECT id, parent\_id, url, title, raw\_content FROM crawled\_data ORDER BY id DESC LIMIT 500&quot;, conn);
+
+conn.close()
+
+for i in self.tree.get\_children(): self.tree.delete(i)
+
+for \_, r in self.df.iterrows(): self.tree.insert(&quot;&quot;, &quot;end&quot;,
+
+values=(r[&#x27;id&#x27;], r[&#x27;parent\_id&#x27;], r[&#x27;url&#x27;], r[&#x27;title&#x27;]))
+
+self.draw\_graph(self.df)
+
+def show\_ctx(self, event):
+
+item = self.tree.identify\_row(event.y)
+
+if item:
+
+self.tree.selection\_set(item);
+
+self.ctx\_menu.post(event.x\_root, event.y\_root)
+
+def launch\_deep(self, use\_keyword):
+
+sel = self.tree.selection()
+
+if not sel: return
+
+vals = self.tree.item(sel[0])[&#x27;values&#x27;]
+
+url = vals[2]
+
+crawler\_tab = self.app.tabs\_map[&quot;crawler&quot;]
+
+crawler\_tab.e\_in.delete(0, tk.END);
+
+crawler\_tab.e\_in.insert(0, url)
+
+crawler\_tab.v\_src.set(&quot;direct&quot;);
+
+crawler\_tab.upd()
+
+crawler\_tab.cb\_mode.current(4)
+
+crawler\_tab.v\_rec.set(True)
+
+crawler\_tab.v\_strict.set(use\_keyword)
+
+self.app.nb.select(crawler\_tab)
+
+messagebox.showinfo(&quot;Deep Crawl&quot;, f&quot;URL übernommen: {url}\nModus wurde eingestellt.\nBitte &#x27;STARTEN&#x27; klicken.&quot;)
+
+def on\_tbl\_sel(self, e):
+
+sel = self.tree.selection()
+
+if not sel: return
+
+iid = self.tree.item(sel[0])[&#x27;values&#x27;][0]
+
+row = self.df[self.df[&#x27;id&#x27;] == iid].iloc[0]
+
+self.txt\_preview.delete(&quot;1.0&quot;, tk.END);
+
+self.txt\_preview.insert(tk.END, row[&#x27;raw\_content&#x27;] or &quot;&quot;)
+
+def draw\_graph(self, df):
+
+for w in self.canv.winfo\_children(): w.destroy()
+
+G = nx.DiGraph();
+
+node\_map = {}
+
+for \_, r in df.iterrows():
+
+G.add\_node(r[&#x27;id&#x27;]);
+
+node\_map[r[&#x27;id&#x27;]] = r[&#x27;url&#x27;]
+
+if r[&#x27;parent\_id&#x27;]: G.add\_edge(r[&#x27;parent\_id&#x27;], r[&#x27;id&#x27;])
+
+fig, ax = plt.subplots(figsize=(6, 5));
+
+pos = nx.spring\_layout(G, k=0.2)
+
+nodes = nx.draw\_networkx\_nodes(G, pos, ax=ax, node\_size=100, node\_color=&#x27;skyblue&#x27;)
+
+nx.draw\_networkx\_edges(G, pos, ax=ax, alpha=0.5, arrows=True)
+
+annot = ax.annotate(&quot;&quot;, xy=(0, 0), xytext=(10, 10), textcoords=&quot;offset points&quot;,
+
+bbox=dict(boxstyle=&quot;round&quot;, fc=&quot;w&quot;), arrowprops=dict(arrowstyle=&quot;-&gt;&quot;));
+
+annot.set\_visible(False)
+
+def update\_annot(ind):
+
+idx = ind[&quot;ind&quot;][0];
+
+nid = list(G.nodes())[idx];
+
+url = node\_map.get(nid, &quot;?&quot;)
+
+annot.xy = pos[nid];
+
+annot.set\_text(f&quot;ID {nid}\n{url}&quot;)
+
+def hover(event):
+
+vis = annot.get\_visible()
+
+if event.inaxes == ax:
+
+cont, ind = nodes.contains(event)
+
+if cont:
+
+update\_annot(ind); annot.set\_visible(True); fig.canvas.draw\_idle()
+
+else:
+
+if vis: annot.set\_visible(False); fig.canvas.draw\_idle()
+
+fig.canvas.mpl\_connect(&quot;motion\_notify\_event&quot;, hover)
+
+c = FigureCanvasTkAgg(fig, master=self.canv);
+
+c.draw();
+
+c.get\_tk\_widget().pack(fill=&quot;both&quot;, expand=True)
+
+class GeminiTab(ttk.Frame):
+
+def \_\_init\_\_(self, parent, app):
+
+super().\_\_init\_\_(parent);
+
+self.app = app;
+
+self.setup\_ui()
+
+def setup\_ui(self):
+
+if not CRAWL4AI\_AVAILABLE:
+
+ttk.Label(self, text=&quot;Crawl4AI fehlt.&quot;, fg=&quot;red&quot;).pack(pady=20)
+
+return
+
+lbl = tk.Label(self, text=&quot;Gemini URLs:&quot;, font=(&quot;Segoe UI&quot;, 11, &quot;bold&quot;));
+
+lbl.pack(anchor=&quot;w&quot;, padx=20, pady=(20, 5))
+
+self.url\_input = scrolledtext.ScrolledText(self, height=10);
+
+self.url\_input.pack(fill=&quot;x&quot;, padx=20)
+
+self.headless\_var = tk.BooleanVar(value=False);
+
+tk.Checkbutton(self, text=&quot;Headless&quot;, variable=self.headless\_var).pack(anchor=&quot;w&quot;, padx=20)
+
+btn = tk.Button(self, text=&quot;START GEMINI&quot;, command=self.start\_thread, bg=&quot;#d32f2f&quot;, fg=&quot;white&quot;, height=2);
+
+btn.pack(fill=&quot;x&quot;, padx=20, pady=20)
+
+self.log\_area = scrolledtext.ScrolledText(self, height=12, bg=&quot;#1e1e1e&quot;, fg=&quot;#00ff00&quot;);
+
+self.log\_area.pack(fill=&quot;x&quot;, side=&quot;bottom&quot;, padx=10, pady=10)
+
+if os.path.exists(&quot;urls.txt&quot;):
+
+with open(&quot;urls.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f: self.url\_input.insert(&quot;1.0&quot;, f.read())
+
+def log(self, msg):
+
+self.log\_area.insert(tk.END, f&quot;[{datetime.now().strftime(&#x27;%H:%M:%S&#x27;)}] {msg}\n&quot;); self.log\_area.see(tk.END)
+
+def start\_thread(self):
+
+urls = self.url\_input.get(&quot;1.0&quot;, tk.END).strip().splitlines()
+
+urls = [u.strip() for u in urls if &quot;gemini.google.com&quot; in u]
+
+if not urls: messagebox.showerror(&quot;Fehler&quot;, &quot;Keine URLs.&quot;); return
+
+threading.Thread(target=self.run\_async, args=(urls,), daemon=True).start()
+
+def run\_async(self, urls):
+
+try:
+
+asyncio.run(self.crawl\_process(urls))
+
+except Exception as e:
+
+self.log(f&quot;Error: {e}&quot;)
+
+async def crawl\_process(self, urls):
+
+self.log(&quot;Starte Crawl4AI...&quot;)
+
+js\_scroll = &quot;window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;&quot;
+
+out = &quot;crawl\_results&quot;;
+
+os.makedirs(out, exist\_ok=True);
+
+sc\_dir = os.path.join(out, &quot;screenshots&quot;);
+
+os.makedirs(sc\_dir, exist\_ok=True)
+
+b\_cfg = BrowserConfig(verbose=True, headless=self.headless\_var.get(), user\_data\_dir=CHROME\_USER\_DATA\_DIR,
+
+use\_managed\_browser=True)
+
+r\_cfg = CrawlerRunConfig(cache\_mode=CacheMode.BYPASS, js\_code=js\_scroll, wait\_for=&quot;share-viewer&quot;,
+
+screenshot=True, magic=True)
+
+data = []
+
+async with AsyncWebCrawler(config=b\_cfg) as crawler:
+
+for i, url in enumerate(urls):
+
+self.log(f&quot;Lade {url}...&quot;)
+
+res = await crawler.arun(url=url, config=r\_cfg)
+
+if not res.success: self.log(f&quot;Fehler: {res.error\_message}&quot;); continue
+
+spath = None
+
+if res.screenshot:
+
+sdata = base64.b64decode(res.screenshot)
+
+fname = f&quot;chat\_{int(datetime.now().timestamp())}\_{i}.png&quot;;
+
+spath = os.path.join(sc\_dir, fname)
+
+with open(spath, &quot;wb&quot;) as f: f.write(sdata)
+
+cdata = self.parse\_html(res.html, url);
+
+cdata[&#x27;screenshot\_path&#x27;] = spath
+
+data.append(cdata);
+
+self.log(f&quot;OK: {len(cdata[&#x27;turns&#x27;])} Turns.&quot;)
+
+await asyncio.sleep(2)
+
+self.app.root.after(0, lambda: ReviewWindow(self.app.root, data, self.save\_report))
+
+def clean\_html(self, el):
+
+if not el: return &quot;&quot;
+
+for s in [&quot;script&quot;, &quot;iframe&quot;, &quot;noscript&quot;, &quot;svg&quot;, &quot;style&quot;]:
+
+for t in el.select(s): t.decompose()
+
+return el.decode\_contents()
+
+def parse\_html(self, html\_c, url):
+
+soup = BeautifulSoup(html\_c, &#x27;html.parser&#x27;)
+
+main = soup.find(&#x27;share-viewer&#x27;) or soup.find(&#x27;main&#x27;) or soup.body
+
+date = datetime.now().strftime(&#x27;%d.%m.%Y&#x27;);
+
+turns = []
+
+if main:
+
+processed = set();
+
+block = []
+
+for el in main.find\_all(True):
+
+if el in processed: continue
+
+cls = el.get(&quot;class&quot;, []) or []
+
+if &#x27;user-query-bubble-with-background&#x27; in cls or el.name == &#x27;user-query-container&#x27;:
+
+if block: turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;,
+
+&quot;text&quot;: chr(10).join(block)}); block = []
+
+processed.add(el);
+
+[processed.add(c) for c in el.find\_all(True)]
+
+turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: self.clean\_html(el), &quot;text&quot;: el.get\_text()})
+
+elif &#x27;query-text-line&#x27; in cls:
+
+processed.add(el);
+
+block.append(el.get\_text())
+
+elif &#x27;message-content&#x27; in cls or (
+
+el.has\_attr(&#x27;data-test-id&#x27;) and el[&#x27;data-test-id&#x27;] == &#x27;model-response&#x27;):
+
+if block: turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;,
+
+&quot;text&quot;: chr(10).join(block)}); block = []
+
+processed.add(el);
+
+[processed.add(c) for c in el.find\_all(True)]
+
+turns.append({&quot;role&quot;: &quot;MODEL&quot;, &quot;html&quot;: self.clean\_html(el), &quot;text&quot;: el.get\_text()})
+
+if block: turns.append(
+
+{&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;, &quot;text&quot;: chr(10).join(block)})
+
+t = &quot;Chat Export&quot;;
+
+h1 = soup.find(&#x27;h1&#x27;)
+
+if h1: t = h1.get\_text().strip()
+
+return {&quot;title&quot;: t, &quot;url&quot;: url, &quot;chat\_date&quot;: date, &quot;turns&quot;: turns}
+
+def save\_report(self, data):
+
+p = filedialog.asksaveasfilename(defaultextension=&quot;.html&quot;, filetypes=[(&quot;HTML&quot;, &quot;\*.html&quot;)])
+
+if not p: return
+
+css = &quot;body{font-family:sans-serif;padding:20px;background:#eee}.chat{background:white;padding:20px;margin-bottom:20px;border-radius:8px}.role-USER{background:#e3f2fd;padding:15px;margin:10px 0;border-left:5px solid #2196f3}.role-MODEL{background:#fff;padding:15px;margin:10px 0;border-left:5px solid #4caf50}img.screenshot{max-width:100%;border:1px solid #ccc;margin-top:10px}pre{background:#222;color:#fff;padding:10px;overflow-x:auto}&quot;
+
+h = f&quot;&lt;html&gt;&lt;head&gt;&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;style&gt;{css}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Gemini Archiv&lt;/h1&gt;&quot;
+
+for c in data:
+
+scr = f&quot;&lt;br&gt;&lt;b&gt;Beweis:&lt;/b&gt;&lt;br&gt;&lt;img class=&#x27;screenshot&#x27; src=&#x27;file:///{c[&#x27;screenshot\_path&#x27;].replace(os.sep, &#x27;/&#x27;)}&#x27; /&gt;&quot; if c.get(
+
+&#x27;screenshot\_path&#x27;) else &quot;&quot;
+
+h += f&quot;&lt;div class=&#x27;chat&#x27;&gt;&lt;h2&gt;{c[&#x27;title&#x27;]}&lt;/h2&gt;&lt;p&gt;{c[&#x27;url&#x27;]} | {c[&#x27;chat\_date&#x27;]}&lt;/p&gt;&quot;
+
+for t in c[&#x27;turns&#x27;]: h += f&quot;&lt;div class=&#x27;role-{t[&#x27;role&#x27;]}&#x27;&gt;&lt;b&gt;{t[&#x27;role&#x27;]}&lt;/b&gt;&lt;br&gt;{t[&#x27;html&#x27;]}&lt;/div&gt;&quot;
+
+h += scr + &quot;&lt;/div&gt;&quot;
+
+h += &quot;&lt;/body&gt;&lt;/html&gt;&quot;
+
+with open(p, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+
+f.write(h)
+
+messagebox.showinfo(&quot;OK&quot;, f&quot;Gespeichert: {p}&quot;)
+
+class SettingsDialog(tk.Toplevel):
+
+def \_\_init\_\_(self, p, c, cb):
+
+super().\_\_init\_\_(p);
+
+self.cb = cb;
+
+self.entries = {}
+
+for i, k in enumerate([&quot;db\_host&quot;, &quot;db\_port&quot;, &quot;db\_user&quot;, &quot;db\_password&quot;, &quot;db\_name&quot;, &quot;tor\_port&quot;]):
+
+ttk.Label(self, text=k).grid(row=i, column=0);
+
+e = ttk.Entry(self);
+
+e.insert(0, c.get(k, &quot;&quot;));
+
+e.grid(row=i, column=1)
+
+if &quot;pass&quot; in k: e.config(show=&quot;\*&quot;)
+
+self.entries[k] = e
+
+ttk.Button(self, text=&quot;Speichern&quot;, command=self.save).grid(row=99, columnspan=2)
+
+def save(self):
+
+d = {k: v.get().strip() for k, v in self.entries.items()};
+
+save\_config\_to\_file(d);
+
+self.cb(d);
+
+self.destroy()
+
+class MainApp:
+
+def \_\_init\_\_(self, root):
+
+self.root = root;
+
+self.root.title(&quot;Universal Web Spider v20.1 (Syntax Cleaned)&quot;)
+
+self.root.geometry(&quot;1200x850&quot;)
+
+self.app\_config = load\_config()
+
+m = Menu(root);
+
+root.config(menu=m);
+
+fm = Menu(m, tearoff=0);
+
+m.add\_cascade(label=&quot;Datei&quot;, menu=fm)
+
+fm.add\_command(label=&quot;Einstellungen&quot;, command=self.settings)
+
+self.nb = ttk.Notebook(root);
+
+self.nb.pack(fill=&quot;both&quot;, expand=True)
+
+# Tab References
+
+self.tabs\_map = {}
+
+self.tabs\_map[&quot;crawler&quot;] = UniversalCrawlerTab(self.nb, self)
+
+self.nb.add(self.tabs\_map[&quot;crawler&quot;], text=&quot;🕷️ Smart Crawler &amp; Harvester&quot;)
+
+self.nb.add(VisuTab(self.nb, self), text=&quot;🌳 Daten &amp; Visu&quot;)
+
+self.nb.add(GeminiTab(self.nb, self), text=&quot;♊ Gemini Crawler&quot;)
+
+def settings(self): SettingsDialog(self.root, self.app\_config, self.update\_conf)
+
+def update\_conf(self, nc): self.app\_config = nc; messagebox.showinfo(&quot;OK&quot;, &quot;Gespeichert.&quot;)
+
+if \_\_name\_\_ == &quot;\_\_main\_\_&quot;:
+
+root = tk.Tk();
+
+MainApp(root);
+
+root.mainloop()'>3. Imnplementiere diese Lösung in den folgenden Code:...</a></div></div><div class='main'><div id='chat_2' class='chat-container'><div class='chat-meta'><h1>Python-Skript: Übersetzen, Suchen, Crawlen, Indizieren</h1><div class='meta-info'><span class='meta-badge'>Thinking mit</span> <span>Chatverlauf vom: 8. Dezember 2025 um 02:46</span> <span>Veröffentlicht am: 16. Dezember 2025 um 01:31</span></div><div class='meta-info'>Abgerufen am: 19.12.2025 um 17:28 | <a href='https://gemini.google.com/share/ac4a443a4c12' target='_blank'>Original Link</a> <span style='color:gray; font-style:italic;'>(URL: https://gemini.google.com/share/ac4a443a4c12)</span></div></div><div id='chat_2_turn_1' class='turn-container'><div class='turn-header'><span>TURN #1</span><span class='turn-id'>chat_3_turn_1</span></div><div class='turn-body'><div class='role-user'><div class='role-label user'>USER</div><div class='bubble-content'><div class='content'><p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl9wPo4W7y1gO3g0FWjmSI8vTbGUVVZoMrG2qK280zkuGPixA5fUjTpTkR61vCLwR8Qb0zOP6b-PeA8mXcj9yzOUCl6VWniJ-tUkNasl0ZXF2hcMUoL7nJjeMTizQ7mE__LrRzpoPVWD4Yp7-KYFejSX_uQYtrmPjpNvIGYtVQa9s1NBB3A" /></p>
+<p>Anstatt 20 weiterzusuchen und in der duckduckgo seite zu blättern, hat das Smart Crawl nach 7 validen ergebnissen aufgehört zu suchen.</p>
+<p>Bei seiten mit viel javascript und asynchronem inhalt ist der Crawler ins stocken gekommen.</p>
+<p>Die Tabelle soll sortierbar sein und nach ID URL Title sortiert werden können.</p>
+<p>Das Indizieren von unterseiten war nicht besonders erfolgreich.</p></div><img src='crawl_data/img_759a019b5b.jpg'></div></div><div class='role-model'><div class='role-label model'>MODEL</div><div class='bubble-content'><div class='content'><p>Danke für das Update. Das Bild mit dem Label <code>ID nan ?</code> und deine Beschreibung deuten darauf hin, dass hier mehrere Probleme (Logik, Rendering und Datenintegrität) zusammenkommen.</p>
+<p>Hier ist eine Analyse der Probleme und konkrete Lösungsansätze, wie wir deinen "Smart Crawl" stabilisieren:</p>
+<h3>1. Das Daten-Problem: <code>ID nan</code> &amp; Sortierung</h3>
+<p>Das Bild zeigt deutlich: <strong>Du hast ein Datenintegritätsproblem.</strong> Bevor wir die Tabelle sortierbar machen, müssen wir sicherstellen, dass die Daten valide sind. Eine Sortierung nach "ID" wird fehlschlagen oder crashen, wenn die ID <code>NaN</code> (Not a Number) oder <code>null</code> ist.</p>
+<ul>
+<li><strong>Ursache:</strong> Wahrscheinlich wird die ID erst zugewiesen, <em>nachdem</em> der Crawl erfolgreich war. Wenn der Crawl bei JS-lastigen Seiten scheitert (siehe Punkt 3), wird zwar ein Eintrag angelegt, aber keine ID generiert.</li>
+<li>
+<p><strong>Lösung:</strong></p>
+</li>
+<li>
+<p><strong>ID-Generierung vorziehen:</strong> Generiere eine UUID oder einen Hash (z.B. aus der URL) <em>bevor</em> der Request startet. So hat jeder Eintrag zumindest eine ID.</p>
+</li>
+<li><strong>Frontend Sortierung:</strong> Für die Tabelle empfehle ich Standard-Bibliotheken (wie DataTables für jQuery, oder die built-in Sortierfunktionen von React/Vue), aber erst <em>nachdem</em> die <code>NaN</code>-Werte bereinigt sind.</li>
+</ul>
+<h3>2. Abbruch nach 7 Ergebnissen (DuckDuckGo Pagination)</h3>
+<p>Dass der Crawler aufhört, obwohl er 20 Ergebnisse holen soll, liegt meist an der Abbruchbedingung in der Schleife oder an Anti-Bot-Maßnahmen.</p>
+<ul>
+<li>
+<p><strong>Logik-Check:</strong> Prüfe deine <code>while</code>-Schleife.</p>
+</li>
+<li>
+<p><em>Falsch:</em> <code>while i &lt; 20</code> (Zählt Versuche, nicht Treffer).</p>
+</li>
+<li><em>Richtig:</em> <code>while valid_results.length &lt; 20</code>.</li>
+<li><strong>DuckDuckGo Spezifikum:</strong> DDG lädt Ergebnisse oft via "Infinite Scroll" oder einem "Mehr laden" Button nach, der per XHR (AJAX) getriggert wird. Wenn dein Crawler nur das initiale HTML parst, sieht er die Buttons für Seite 2, 3 etc. nicht oder kann sie nicht ausführen.</li>
+<li><strong>Lösung:</strong> Du musst den "Next"-Token aus dem HTML extrahieren oder (besser) einen Browser simulieren, der scrollt.</li>
+</ul>
+<h3>3. JavaScript &amp; Asynchroner Inhalt (Stocken)</h3>
+<p>Du schreibst, der Crawler stockt bei viel JS. Das ist typisch für statische Request-Libraries (wie <code>requests</code> in Python oder <code>axios</code> in Node). Sie sehen nur den leeren Container, bevor React/Angular/Vue den Inhalt rendert.</p>
+<ul>
+<li>
+<p><strong>Die Lösung:</strong> Du brauchst einen <strong>Headless Browser</strong>.</p>
+</li>
+<li>
+<p><strong>Empfehlung:</strong> Nutze <strong>Playwright</strong> (oder Puppeteer).</p>
+</li>
+<li><em>Warum?</em> Playwright wartet automatisch auf <code>networkidle</code> (bis der Netzwerkverkehr sich beruhigt hat) oder bis bestimmte Selektoren sichtbar sind (<code>await page.waitForSelector('.content')</code>). Das löst das Problem mit leeren Seiten bei asynchronem Content.</li>
+</ul>
+<h3>4. Subseiten-Indizierung (Link-Tiefe)</h3>
+<p>Wenn Unterseiten nicht gefunden werden, liegt das oft an der URL-Normalisierung.</p>
+<ul>
+<li><strong>Problem:</strong> Viele Links im HTML sind relativ (<code>/about</code> statt <code>https://example.com/about</code>).</li>
+<li>
+<p><strong>Lösung:</strong></p>
+</li>
+<li>
+<p>Nutze eine URL-Join-Funktion, um relative Links in absolute umzuwandeln.</p>
+</li>
+<li><strong>Filterung:</strong> Ignoriere Links, die auf <code>#</code>, <code>mailto:</code>, oder Dateien (<code>.pdf</code>, <code>.jpg</code>) zeigen, um Ressourcen zu sparen.</li>
+</ul>
+<hr />
+<h3>Gezielte Fragen zur Umsetzung</h3>
+<p>Um dir den passenden Code-Fix zu geben, muss ich kurz wissen:</p>
+<ol>
+<li><strong>Tech Stack:</strong> Verwendest du Python (BeautifulSoup/Scrapy/Selenium) oder Node.js (Puppeteer/Playwright)?</li>
+<li><strong>Datenhaltung:</strong> Woher kommt die <code>ID</code> aktuell? Aus einer Datenbank (Auto-Increment) oder wird sie im Code berechnet?</li>
+<li><strong>Visualisierung:</strong> Womit wurde der Graph im Bild erstellt? (Scheint Matplotlib oder NetworkX zu sein – eventuell können wir die <code>NaN</code> Knoten dort direkt rot färben zur Diagnose).</li>
+</ol>
+<p><strong>Nächster Schritt:</strong><br />
+Möchtest du, dass ich dir ein Snippet für <strong>Playwright</strong> erstelle, das speziell darauf ausgelegt ist, auf asynchrones Nachladen (Infinite Scroll) bei DuckDuckGo zu warten?</p></div></div></div></div></div><div id='chat_2_turn_2' class='turn-container'><div class='turn-header'><span>TURN #2</span><span class='turn-id'>chat_3_turn_2</span></div><div class='turn-body'><div class='role-user'><div class='role-label user'>USER</div><div class='bubble-content'><div class='content'><p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl-znNMRI1TvQTH_SaNTrSx5JDJMw0fPX2IdbjuGvqsGcxUxnH1K10WI_1mu1A0VoOO2SEat76m46P97_4aAHHKaKvVkLq9mCbnL3-xEffsd4ITOM8QYPRsrO7k7XVVbPjVdyGMQMgfqKReb5XmwWw1ttpYjJ8w41yCcRNZPMW2AzpVOuIZ2" /></p></div><img src='crawl_data/img_a8afb95034.jpg'></div></div><div class='role-model'><div class='role-label model'>MODEL</div><div class='bubble-content'><div class='content'><p>Das neue Bild der Datenbank-Tabelle ist extrem aufschlussreich. Es bestätigt genau, wo die technischen Engpässe liegen. Hier ist die Analyse deiner Daten und der Fahrplan zur Behebung der Probleme:</p>
+<h3>1. Analyse der Datenbank-Tabelle</h3>
+<p>Die Daten zeigen drei konkrete Probleme, die deine beschriebenen Fehler ("Stocken bei JS", "schlechte Sub-Indizierung") erklären:</p>
+<ul>
+<li>
+<p><strong>Der Beweis für das JS-Problem (Rows 3, 9, 12):</strong><br />
+  Schau dir die Spalte <code>raw_content</code> für die GitHub-Links an. Dort steht: <em>"Popular repositories </em><em>Loading</em><em>"</em>.</p>
+</li>
+<li>
+<p><strong>Diagnose:</strong> Dein Crawler lädt nur das initiale HTML. Da GitHub (und viele moderne Seiten) die Inhalte per JavaScript nachlädt, sieht dein Crawler nur den Lade-Spinner ("Loading"), aber nicht den eigentlichen Inhalt (die Repositories). Deshalb stockt er und findet keine relevanten Keywords.</p>
+</li>
+<li>
+<p><strong>Das Problem der "falschen" Unterseiten (Rows 11, 12):</strong><br />
+  Du sagtest, das Indizieren von Unterseiten war nicht erfolgreich. Die Tabelle zeigt, warum:</p>
+</li>
+<li>
+<p>Row 11 (<code>.../3d-models#...</code>) und Row 12 (<code>...#start-of-content</code>) sind <strong>keine echten Unterseiten</strong>.</p>
+</li>
+<li><strong>Diagnose:</strong> Das sind sogenannte "Anchor Links" (erkennbar am <code>#</code>). Sie führen auf dieselbe Seite, nur an eine andere Scroll-Position. Dein Crawler hält sie für neue Seiten, lädt den gleichen Inhalt nochmal herunter und verschwendet Ressourcen ("Duplicate Content").</li>
+<li><strong>ID und Sortierung:</strong><br />
+  Die gute Nachricht: In der Datenbank ist die <code>id</code> (Spalte 1) ein sauberer Integer (1, 2, 3...). Das <code>NaN</code>-Problem aus dem ersten Bild ist also <strong>kein Datenbank-Problem</strong>, sondern entsteht vermutlich erst, wenn du die Daten für die Graphen-Visualisierung (Python/Pandas) oder die Frontend-Tabelle lädst.</li>
+</ul>
+<hr />
+<h3>2. Die Lösungen (Schritt-für-Schritt)</h3>
+<p>Um den "Smart Crawl" zu reparieren, müssen wir an drei Schrauben drehen:</p>
+<h4>A. Umstellung auf "Headless Browser" (gegen das JS-Problem)</h4>
+<p>Damit statt "Loading" der echte Text in der Datenbank landet, musst du die Seite so rendern, wie ein Browser es tut.</p>
+<ul>
+<li><strong>Tool:</strong> Nutze <strong>Playwright</strong> (oder Puppeteer) statt <code>requests</code> oder <code>axios</code>.</li>
+<li><strong>Logik:</strong></li>
+</ul>
+<p><code># Pseudo-Code Beispiel für Playwright
+  page.goto(url)
+  # Wichtig: Warten, bis das Netzwerk ruhig ist (meist sind dann alle JS-Daten da)
+  page.wait_for_load_state("networkidle")
+  content = page.content()</code></p>
+<p><em>Das löst das GitHub-Problem sofort.</em></p>
+<h4>B. URL-Bereinigung (gegen das Subseiten-Problem)</h4>
+<p>Bevor du eine URL in die Queue zum Crawlen legst, musst du sie "normalisieren".</p>
+<ul>
+<li><strong>Die Regel:</strong> Entferne alles nach dem <code>#</code>.</li>
+<li>
+<p><strong>Das Ergebnis:</strong> Aus <code>.../page#section1</code> und <code>.../page#section2</code> wird beides <code>.../page</code>. Da die URL dann schon bekannt ist, wird sie nicht doppelt gecrawlt.</p>
+</li>
+<li>
+<p><em>Zusatz-Tipp:</em> Prüfe auch Query-Parameter (<code>?lang=de</code>). Oft generieren diese ebenfalls Duplikate.</p>
+</li>
+</ul>
+<h4>C. Das "7 Ergebnisse"-Problem (DuckDuckGo Pagination)</h4>
+<p>DuckDuckGo lädt Ergebnisse dynamisch nach ("Infinite Scroll"). Ein statischer Request sieht nur die ersten paar Ergebnisse.</p>
+<ul>
+<li>
+<p><strong>Lösung mit Playwright:</strong></p>
+</li>
+<li>
+<p>Lade die DDG-Suchseite.</p>
+</li>
+<li>Simuliere das Scrollen ans Ende der Seite (<code>page.keyboard.press("End")</code>).</li>
+<li>Warte auf den Button "Mehr laden" (Selector oft <code>.result--more__btn</code>) und klicke ihn (<code>page.click(...)</code>).</li>
+<li>Erst <em>dann</em> die Links extrahieren.</li>
+</ul>
+<hr />
+<h3>3. Für die sortierbare Tabelle</h3>
+<p>Da die Datenbank sauber ist, kannst du die Sortierung direkt über SQL lösen, bevor die Daten ins Frontend gehen. Das verhindert <code>NaN</code>-Fehler in der Anzeige.</p>
+<p><strong>SQL Query Vorschlag (für deine Tabellenansicht):</strong></p>
+<pre><code>SELECT id, url, title, description
+FROM deine_tabelle
+WHERE run_id = (SELECT MAX(run_id) FROM deine_tabelle) -- Nur den aktuellsten Lauf zeigen
+ORDER BY id ASC; -- Oder nach url/title
+</code></pre>
+<p><strong>Möglicher nächster Schritt:</strong><br />
+Soll ich dir eine <strong>Python-Funktion (mit Playwright)</strong> schreiben, die URLs automatisch bereinigt (das <code>#</code>-Problem löst) und wartet, bis der "Loading"-Text verschwunden ist?</p></div></div></div></div></div><div id='chat_2_turn_3' class='turn-container'><div class='turn-header'><span>TURN #3</span><span class='turn-id'>chat_3_turn_3</span></div><div class='turn-body'><div class='role-user'><div class='role-label user'>USER</div><div class='bubble-content'><div class='content'><p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl_8aL2MZ637jix8FHR9Aa9AvZ6I6FzVff82wjZoOJnvLfvT_hmGT61c_2eZdEv9xU1Ogqel7435PtW4KAT_f5M3LxHuJYPA7Fr9MflrogprCSjT6Fw2FGtvnG4tPrcqxLLLVQx7aK99bOySf31nhQo5Rm4D67CpKv01vmpCN3V-KfLRB8bU" /></p>
+<p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl_LiUbKoIpW3k7FNPeHI8P_GQOAc52qSqis2L-pzWJGH6AIYo-8keNrcWN484pN7mezMzL5ZNC3Uzfcz5REW5aSKkdArZVPYZBQodI9Y0jVM4Bhy4AT5UDb4AeU6TZPWkrllgk7LivvvcsN3D2dJYyknll8r9g_l0f7YGbIqpzFehQ0y1xq" /></p>
+<p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl-tWjYi3j5VyQjp9FgbV_tvQtRKBNtMOYeelR8BXOQKYFICt_Jf_U-sWhiuxSYZ_S1Zb-jsAUq2qDsKrivrXeSQ7m3MxWoXE6EKzcaFqOLTfzqsZzjSvOCm37CmGddFCJm5hCqW0-Lwp4QnG3p2eCYjHpV_bNjZC0Dun-V14hfNmtr3uU-Q" /></p>
+<p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl-9rjVCEjIFFxq0sW9mjpQQS7ZmoPG_YNY4mT_ogIwrCwUPdYhctG_wcbn8guQHa7w_ToSm81yaUuDE9pGHYZfSz9_kBwERv7vQyzdvrTB0Acz3jAk21b03RW1OYilJIwWDrUObKcHAxEyoPPmquYY16hMXsN48t5UQgc-mE-5ZHfvxLyGw" /></p>
+<p><img alt="Vorschau des hochgeladenen Bildes" src="https://lh3.googleusercontent.com/gg/AIJ2gl_xsTdMTliACfgM94rqrVwZO62ArpeTtH-FBO_l1ndb8f0IG_kkljTuONO27yWOYOrIjrqYaw4ijMhTZAkAQuEivk1b20pUy0C57YlFme0sF_w5XfM_fsTyWNDUMAatEWdFnD8sFpjD11NSd33ts-F1aR3CsSOtMYwNc6Oe8Y7XX7l_MFM" /></p>
+<p>Imnplementiere diese Lösung in den folgenden Code:</p>
+<p>import tkinter as tk</p>
+<p>from tkinter import ttk, scrolledtext, messagebox, Menu, filedialog, Toplevel</p>
+<p>import threading</p>
+<p>import time</p>
+<p>import sys</p>
+<p>import webbrowser</p>
+<p>import socket</p>
+<p>import mysql.connector</p>
+<p>from mysql.connector import errorcode</p>
+<p>import html</p>
+<p>import json</p>
+<p>import os</p>
+<p>import warnings</p>
+<p>import re</p>
+<p>import pandas as pd</p>
+<p>import trafilatura</p>
+<p>from langdetect import detect, detect_langs, LangDetectException</p>
+<p>import networkx as nx</p>
+<p>from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>import asyncio</p>
+<p>import base64</p>
+<p>from datetime import datetime</p>
+<p>from bs4 import BeautifulSoup</p>
+<h1>--- 1. CRITICAL SETUP &amp; GLOBALS ---</h1>
+<p>sys.stdout.reconfigure(encoding='utf-8')</p>
+<p>os.environ["PYTHONWARNINGS"] = "ignore"</p>
+<p>warnings.simplefilter(action='ignore', category=FutureWarning)</p>
+<p>warnings.simplefilter(action='ignore', category=UserWarning)</p>
+<h1>Globaler Pfad für Chrome Profil</h1>
+<p>CHROME_USER_DATA_DIR = os.path.join(os.getenv('LOCALAPPDATA'), 'Google', 'Chrome',</p>
+<p>'User Data') if os.name == 'nt' else ""</p>
+<h1>--- 2. IMPORTS ---</h1>
+<p>try:</p>
+<p>import socks</p>
+<p>except ImportError:</p>
+<p>pass</p>
+<p>try:</p>
+<p>from duckduckgo_search import DDGS</p>
+<p>except ImportError:</p>
+<p>try:</p>
+<p>from ddgs import DDGS</p>
+<p>except ImportError:</p>
+<p>pass</p>
+<p>from deep_translator import GoogleTranslator</p>
+<p>from playwright.sync_api import sync_playwright</p>
+<p>CRAWL4AI_AVAILABLE = False</p>
+<p>try:</p>
+<p>from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode</p>
+<p>CRAWL4AI_AVAILABLE = True</p>
+<p>except ImportError:</p>
+<p>pass</p>
+<h1>---------------------------------------------------------</h1>
+<h1>3. KONFIGURATION</h1>
+<h1>---------------------------------------------------------</h1>
+<p>CONFIG_FILE = "crawler_config.json"</p>
+<p>DEFAULT_CONFIG = {</p>
+<p>"db_host": "localhost", "db_port": "3306",</p>
+<p>"db_user": "root", "db_password": "",</p>
+<p>"db_name": "search_index_v3", "tor_port": "9050"</p>
+<p>}</p>
+<p>REGION_MAPPING = {</p>
+<p>'de': {'ddg': 'de-de', 'locale': 'de-DE', 'header': 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7'},</p>
+<p>'en': {'ddg': 'us-en', 'locale': 'en-US', 'header': 'en-US,en;q=0.9'},</p>
+<p>'fr': {'ddg': 'fr-fr', 'locale': 'fr-FR', 'header': 'fr-FR,fr;q=0.9,en;q=0.8'},</p>
+<p>'es': {'ddg': 'es-es', 'locale': 'es-ES', 'header': 'es-ES,es;q=0.9,en;q=0.8'},</p>
+<p>'it': {'ddg': 'it-it', 'locale': 'it-IT', 'header': 'it-IT,it;q=0.9,en;q=0.8'},</p>
+<p>'cn': {'ddg': 'cn-zh', 'locale': 'zh-CN', 'header': 'zh-CN,zh;q=0.9,en;q=0.8'}</p>
+<p>}</p>
+<p>DEFAULT_REGION_CFG = {'ddg': 'wt-wt', 'locale': 'en-US', 'header': 'en-US,en;q=0.9'}</p>
+<p>DOMAIN_BLACKLIST = [</p>
+<p>"zhihu.com", "bilibili.com", "facebook.com", "twitter.com", "instagram.com",</p>
+<p>"youtube.com", "tiktok.com", "linkedin.com", "google.com", "duckduckgo.com",</p>
+<p>"bing.com", "yahoo.com", "baidu.com", "yandex.com"</p>
+<p>]</p>
+<p>JUNK_PATTERNS = [</p>
+<p>r'/login', r'/signin', r'/signup', r'/register', r'/auth',</p>
+<p>r'403 forbidden', r'access denied', r'captcha', r'verify you are a human',</p>
+<p>r'security check', r'cloudﬂare', r'{"message":', r'password',</p>
+<p>r'forgot-password', r'reset-password'</p>
+<p>]</p>
+<h1>---------------------------------------------------------</h1>
+<h1>4. UTILS &amp; QUALITY GATE</h1>
+<h1>---------------------------------------------------------</h1>
+<p>class ToolTip:</p>
+<p>def __init__(self, widget, text):</p>
+<p>self.widget = widget;</p>
+<p>self.text = text;</p>
+<p>self.tip_window = None</p>
+<p>widget.bind("<Enter>", self.show_tip);</p>
+<p>widget.bind("<Leave>", self.hide_tip)</p>
+<p>def show_tip(self, event=None):</p>
+<p>if self.tip_window or not self.text: return</p>
+<p>x, y, _, _ = self.widget.bbox("insert")</p>
+<p>x += self.widget.winfo_rootx() + 25;</p>
+<p>y += self.widget.winfo_rooty() + 25</p>
+<p>self.tip_window = tw = Toplevel(self.widget);</p>
+<p>tw.wm_overrideredirect(True);</p>
+<p>tw.wm_geometry(f"+{x}+{y}")</p>
+<p>tk.Label(tw, text=self.text, justify=tk.LEFT, background="#ffffe0", relief=tk.SOLID, borderwidth=1,</p>
+<p>font=("tahoma", "8", "normal")).pack(ipadx=1)</p>
+<p>def hide_tip(self, event=None):</p>
+<p>if self.tip_window: self.tip_window.destroy(); self.tip_window = None</p>
+<p>def load_config():</p>
+<p>if os.path.exists(CONFIG_FILE):</p>
+<p>try:</p>
+<p>return json.load(open(CONFIG_FILE, 'r'))</p>
+<p>except:</p>
+<p>return DEFAULT_CONFIG</p>
+<p>return DEFAULT_CONFIG</p>
+<p>def save_config_to_file(data): json.dump(data, open(CONFIG_FILE, 'w'), indent=4)</p>
+<p>def setup_proxy(use_tor, port, log_func):</p>
+<p>try:</p>
+<p>if use_tor:</p>
+<p>socks.set_default_proxy(socks.SOCKS5, "localhost", port);</p>
+<p>socket.socket = socks.socksocket</p>
+<p>log_func(f"[NET] Tor Proxy (:{port}) aktiv.")</p>
+<p>else:</p>
+<p>socks.set_default_proxy();</p>
+<p>socket.socket = socket._socketobject if hasattr(socket, "_socketobject") else socket.socket</p>
+<p>log_func("[NET] Direkte Verbindung.")</p>
+<p>except Exception as e:</p>
+<p>log_func(f"[NET ERR] {e}")</p>
+<p>class QualityGate:</p>
+<p>@staticmethod</p>
+<p>def is_url_allowed(url):</p>
+<p>if not url or not url.startswith("http"): return False</p>
+<p>url_lower = url.lower()</p>
+<p>for d in DOMAIN_BLACKLIST:</p>
+<p>if d in url_lower: return False</p>
+<p>for p in JUNK_PATTERNS:</p>
+<p>if p.startswith("/") and p in url_lower: return False</p>
+<p>return True</p>
+<p>@staticmethod</p>
+<p>def is_junk_content(title, content):</p>
+<p>combined = (title + " " + content).lower()[:1500]</p>
+<p>for p in JUNK_PATTERNS:</p>
+<p>if p.replace("/", "") in combined: return True</p>
+<p>return False</p>
+<p>@staticmethod</p>
+<p>def contains_keyword(content, keyword):</p>
+<p>if not keyword or not content: return True</p>
+<p>return keyword.lower() in content.lower()</p>
+<p>@staticmethod</p>
+<p>def check_language(text, html_raw, target_lang):</p>
+<h1>1. HTML Meta Check</h1>
+<p>if html_raw:</p>
+<p>try:</p>
+<p>soup = BeautifulSoup(html_raw, 'html.parser')</p>
+<p>html_tag = soup.find('html')</p>
+<p>if html_tag and html_tag.has_attr('lang'):</p>
+<p>if html_tag['lang'].lower().startswith(target_lang): return True, "Meta-Tag Match"</p>
+<p>except:</p>
+<p>pass</p>
+<h1>2. Text Analyse</h1>
+<p>if len(text) &lt; 150: return True, "Short (Pass)"</p>
+<p>try:</p>
+<p>langs = detect_langs(text)</p>
+<p>if langs[0].lang.startswith(target_lang): return True, f"Text ({langs[0].prob:.2f})"</p>
+<p>if target_lang in ['de', 'en', 'fr', 'es'] and langs[0].lang in ['ru', 'zh-cn', 'ja', 'ar']:</p>
+<p>return False, f"Wrong Lang: {langs[0].lang}"</p>
+<p>except:</p>
+<p>pass</p>
+<p>return True, "Fallback"</p>
+<h1>---------------------------------------------------------</h1>
+<h1>5. DATABASE MANAGER</h1>
+<h1>---------------------------------------------------------</h1>
+<p>class DatabaseManager:</p>
+<p>def __init__(self, logger_func, config):</p>
+<p>self.log = logger_func;</p>
+<p>self.config = config;</p>
+<p>self.conn = None;</p>
+<p>self.cursor = None</p>
+<p>def connect(self):</p>
+<p>try:</p>
+<p>self.conn = mysql.connector.connect(</p>
+<p>user=self.config['db_user'], password=self.config['db_password'],</p>
+<p>host=self.config['db_host'], port=int(self.config['db_port']),</p>
+<p>database=self.config['db_name'], raise_on_warnings=True</p>
+<p>)</p>
+<p>self.cursor = self.conn.cursor();</p>
+<p>self.create_tables();</p>
+<p>return True</p>
+<p>except mysql.connector.Error as err:</p>
+<p>if err.errno == errorcode.ER_BAD_DB_ERROR:</p>
+<p>if self._create_db(): return self.connect()</p>
+<p>if self.log: self.log(f"[DB ERR] {err}")</p>
+<p>return False</p>
+<p>def _create_db(self):</p>
+<p>try:</p>
+<p>c = mysql.connector.connect(user=self.config['db_user'], password=self.config['db_password'],</p>
+<p>host=self.config['db_host'], port=int(self.config['db_port']))</p>
+<p>c.cursor().execute(f"CREATE DATABASE IF NOT EXISTS {self.config['db_name']} DEFAULT CHARACTER SET utf8mb4")</p>
+<p>c.close();</p>
+<p>return True</p>
+<p>except:</p>
+<p>return False</p>
+<p>def get_conn_pandas(self):</p>
+<p>try:</p>
+<p>return mysql.connector.connect(user=self.config['db_user'], password=self.config['db_password'],</p>
+<p>host=self.config['db_host'], port=int(self.config['db_port']),</p>
+<p>database=self.config['db_name'])</p>
+<p>except:</p>
+<p>return None</p>
+<p>def create_tables(self):</p>
+<p>try:</p>
+<p>self.cursor.execute(</p>
+<p>"CREATE TABLE IF NOT EXISTS search_runs (id INT AUTO_INCREMENT PRIMARY KEY, query VARCHAR(255), lang VARCHAR(10), mode VARCHAR(50), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)")</p>
+<p>self.cursor.execute("""</p>
+<p>CREATE TABLE IF NOT EXISTS crawled_data</p>
+<p>(</p>
+<p>id</p>
+<p>INT</p>
+<p>AUTO_INCREMENT</p>
+<p>PRIMARY</p>
+<p>KEY,</p>
+<p>run_id</p>
+<p>INT,</p>
+<p>parent_id</p>
+<p>INT</p>
+<p>DEFAULT</p>
+<p>NULL,</p>
+<p>url</p>
+<p>VARCHAR</p>
+<p>(</p>
+<p>768</p>
+<p>), title TEXT, description TEXT, raw_content MEDIUMTEXT, escaped_content MEDIUMTEXT,</p>
+<p>depth_level INT DEFAULT 0, search_rank INT DEFAULT 0, is_link_list BOOLEAN DEFAULT FALSE,</p>
+<p>crawled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY</p>
+<p>(</p>
+<p>run_id</p>
+<p>) REFERENCES search_runs</p>
+<p>(</p>
+<p>id</p>
+<p>)</p>
+<p>)</p>
+<p>""")</p>
+<p>self.conn.commit()</p>
+<p>except:</p>
+<p>pass</p>
+<p>def url_exists(self, url, run_id):</p>
+<p>try:</p>
+<p>self.cursor.execute("SELECT id FROM crawled_data WHERE url = %s AND run_id = %s", (url, run_id))</p>
+<p>res = self.cursor.fetchone()</p>
+<p>return res[0] if res else None</p>
+<p>except:</p>
+<p>return None</p>
+<p>def save_node(self, run_id, parent_id, url, title, desc, content, depth, rank, is_list=False):</p>
+<p>try:</p>
+<p>eid = self.url_exists(url, run_id)</p>
+<p>if eid: return eid, True</p>
+<p>esc = html.escape(content) if content else ""</p>
+<p>self.cursor.execute("""</p>
+<p>INSERT INTO crawled_data (run_id, parent_id, url, title, description, raw_content,</p>
+<p>escaped_content, depth_level, search_rank, is_link_list)</p>
+<p>VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",</p>
+<p>(run_id, parent_id, url, title, desc, content, esc, depth, rank, is_list))</p>
+<p>self.conn.commit();</p>
+<p>return self.cursor.lastrowid, False</p>
+<p>except:</p>
+<p>return None, False</p>
+<p>def close(self):</p>
+<p>if self.conn: self.conn.close()</p>
+<h1>---------------------------------------------------------</h1>
+<h1>6. UNIVERSAL CRAWLER WORKER (FIXED SYNTAX)</h1>
+<h1>---------------------------------------------------------</h1>
+<p>class UniversalCrawlerWorker:</p>
+<p>def __init__(self, cfg, log):</p>
+<p>self.cfg = cfg; self.log = log</p>
+<p>def run(self, params):</p>
+<p>query = params['query'];</p>
+<p>source = params['source'];</p>
+<p>langs = params['langs']</p>
+<p>use_tor = params['tor'];</p>
+<p>visible = params['visible'];</p>
+<p>trans = params['trans']</p>
+<p>smart_filter = params['smart'];</p>
+<p>strict_keyword = params['strict']</p>
+<p>mode_depth = params['mode_depth'];</p>
+<p>recursive = params['recursive'];</p>
+<p>target_valid = params['target_valid']</p>
+<p>tor_port = int(self.cfg.get("tor_port", 9050))</p>
+<p>setup_proxy(use_tor, tor_port, self.log)</p>
+<p>db = DatabaseManager(self.log, self.cfg)</p>
+<p>if not db.connect(): return</p>
+<p>with sync_playwright() as p:</p>
+<p>proxy = {"server": f"socks5://localhost:{tor_port}"} if use_tor else None</p>
+<p>browser = p.chromium.launch(headless=not visible, proxy=proxy,</p>
+<p>args=["--start-maximized", "--disable-blink-features=AutomationControlled"])</p>
+<p>loop_langs = langs if source == "search" else ["direct"]</p>
+<p>for lang in loop_langs:</p>
+<p>l_cfg = REGION_MAPPING.get(lang)</p>
+<p>if not isinstance(l_cfg, dict): l_cfg = DEFAULT_REGION_CFG</p>
+<p>context = browser.new_context(</p>
+<p>viewport={"width": 1280, "height": 800},</p>
+<p>locale=l_cfg['locale'], timezone_id='UTC',</p>
+<p>extra_http_headers={"Accept-Language": l_cfg['header']}</p>
+<p>)</p>
+<p>context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () =&gt; undefined})")</p>
+<h1>--- BLOCK MEDIA ---</h1>
+<p>def block_media(route):</p>
+<p>if route.request.resource_type in ["image", "media", "font"]:</p>
+<p>try:</p>
+<p>route.abort()</p>
+<p>except:</p>
+<p>pass</p>
+<p>else:</p>
+<p>try:</p>
+<p>route.continue_()</p>
+<p>except:</p>
+<p>pass</p>
+<p>context.route("**/*", block_media)</p>
+<p>queue_items = []</p>
+<h1>PHASE 1: QUEUE FILL</h1>
+<p>if source == "search":</p>
+<p>self.log(f"--- SUCHE {lang.upper()} (Ziel: {target_valid}) ---")</p>
+<p>term = query</p>
+<p>if trans and lang != 'de':</p>
+<p>try:</p>
+<p>term = GoogleTranslator(source='auto', target=lang).translate(query)</p>
+<p>except:</p>
+<p>pass</p>
+<p>try:</p>
+<p>db.cursor.execute("INSERT INTO search_runs (query, lang, mode) VALUES (%s, %s, %s)",</p>
+<p>(term, lang,</p>
+<p>f"mode_{mode_depth}")); run_id = db.cursor.lastrowid; db.conn.commit()</p>
+<p>except:</p>
+<p>continue</p>
+<p>if visible:</p>
+<p>self.log("[VISUAL] Starte Browser-Suche...")</p>
+<p>try:</p>
+<p>s_page = context.new_page()</p>
+<p>ddg_url = f"https://duckduckgo.com/?q={term}&amp;kl={l_cfg['ddg']}&amp;t=h_"</p>
+<p>s_page.goto(ddg_url)</p>
+<h1>Warte auf Titel-Links</h1>
+<p>try:</p>
+<p>s_page.wait_for_selector("a[data-testid='result-title-a']", timeout=10000)</p>
+<p>except:</p>
+<p>self.log(" -&gt; Timeout bei DuckDuckGo Load")</p>
+<p>links = s_page.locator("a[data-testid='result-title-a']").all()</p>
+<p>cnt = 0</p>
+<p>for link in links:</p>
+<p>if cnt &gt;= target_valid * 3: break</p>
+<p>try:</p>
+<p>href = link.get_attribute("href")</p>
+<p>txt = link.inner_text()</p>
+<p>if href and QualityGate.is_url_allowed(href):</p>
+<p>queue_items.append((href, txt, cnt + 1, 0, None))</p>
+<p>cnt += 1</p>
+<p>except:</p>
+<p>pass</p>
+<p>s_page.close()</p>
+<p>self.log(f" -&gt; {len(queue_items)} Roh-Links gefunden.")</p>
+<p>except Exception as e:</p>
+<p>self.log(f"[VISUAL ERR] {e}")</p>
+<p>else:</p>
+<p>try:</p>
+<p>with DDGS() as ddgs:</p>
+<p>res = list(</p>
+<p>ddgs.text(term, region=l_cfg.get('ddg', 'wt-wt'), max_results=target_valid * 3,</p>
+<p>backend="html"))</p>
+<p>for idx, r in enumerate(res):</p>
+<p>if QualityGate.is_url_allowed(r['href']):</p>
+<p>queue_items.append((r['href'], r['title'], idx + 1, 0, None))</p>
+<p>except Exception as e:</p>
+<p>self.log(f"[API ERR] {e}")</p>
+<p>else:</p>
+<p>self.log(f"--- DIREKT ---")</p>
+<p>urls = get_urls_from_input(query, self.log)</p>
+<p>if not urls: break</p>
+<p>try:</p>
+<p>db.cursor.execute("INSERT INTO search_runs (query, lang, mode) VALUES (%s, 'raw', 'direct')",</p>
+<p>(os.path.basename(query)[</p>
+<p>:50],)); run_id = db.cursor.lastrowid; db.conn.commit()</p>
+<p>except:</p>
+<p>continue</p>
+<p>for i, u in enumerate(urls): queue_items.append((u, "Start URL", i + 1, 0, None))</p>
+<h1>PHASE 2: CRAWLING</h1>
+<p>visited = set()</p>
+<p>valid_cnt = 0</p>
+<p>while queue_items:</p>
+<p>if source == "search" and valid_cnt &gt;= target_valid:</p>
+<p>self.log(f"*** ZIEL ERREICHT ***");</p>
+<p>break</p>
+<p>u, t, r, d, pid = queue_items.pop(0)</p>
+<p>if u in visited: continue</p>
+<p>visited.add(u)</p>
+<p>if db.url_exists(u, run_id):</p>
+<p>self.log(f" -&gt; [SKIP] DB: {u[:30]}...")</p>
+<p>valid_cnt += 1;</p>
+<p>continue</p>
+<p>self.log(f"[NODE D{d}] {u[:40]}...")</p>
+<p>content = "";</p>
+<p>desc = "";</p>
+<p>child_links = []</p>
+<p>should_visit = (mode_depth &gt;= 1) or (d &gt; 0)</p>
+<p>if should_visit:</p>
+<p>try:</p>
+<p>page = context.new_page()</p>
+<p>page.set_extra_http_headers({"Accept-Language": l_cfg['header']})</p>
+<p>try:</p>
+<p>page.goto(u, timeout=35000, wait_until="domcontentloaded")</p>
+<p>except:</p>
+<p>try:</p>
+<p>page.close()</p>
+<p>except:</p>
+<p>pass</p>
+<p>continue</p>
+<p>p_content = page.content()</p>
+<p>p_text = page.evaluate("document.body.innerText")</p>
+<p>p_title = page.title()</p>
+<p>if QualityGate.is_junk_content(p_title, p_text):</p>
+<p>self.log(" -&gt; [DROP] Junk/Login")</p>
+<p>page.close()</p>
+<p>continue</p>
+<p>if source == "search" and smart_filter:</p>
+<p>ok, msg = QualityGate.check_language(p_text, p_content, lang)</p>
+<p>if not ok:</p>
+<p>self.log(f" -&gt; [DROP] {msg}")</p>
+<p>page.close()</p>
+<p>continue</p>
+<p>if source == "search" and strict_keyword and query:</p>
+<p>if not QualityGate.contains_keyword(p_text, query):</p>
+<p>self.log(" -&gt; [DROP] Keyword fehlt.")</p>
+<p>page.close()</p>
+<p>continue</p>
+<p>if mode_depth &gt;= 1: desc = page.locator('meta[name="description"]').get_attribute(</p>
+<p>"content") or ""</p>
+<p>if mode_depth &gt;= 2: content = trafilatura.extract(p_content) or ""</p>
+<p>max_tree = 1 if mode_depth == 3 else 2 if mode_depth == 4 else 0</p>
+<p>limit = 3 if recursive else max_tree</p>
+<p>if d &lt; limit:</p>
+<p>hrefs = page.evaluate("Array.from(document.links).map(a =&gt; a.href)")</p>
+<p>for h in hrefs:</p>
+<p>if h.startswith("http") and QualityGate.is_url_allowed(h): child_links.append(h)</p>
+<p>page.close()</p>
+<p>except Exception as e:</p>
+<p>self.log(f" -&gt; [ERR] {e}")</p>
+<p>try:</p>
+<p>page.close()</p>
+<p>except:</p>
+<p>pass</p>
+<p>node_id, exists = db.save_node(run_id, pid, u, t, desc, content, d, r,</p>
+<p>is_list=(len(child_links) &gt; 0))</p>
+<p>if exists:</p>
+<p>self.log(" -&gt; [DUP]");</p>
+<p>valid_cnt += 1</p>
+<p>elif node_id:</p>
+<p>self.log(f" -&gt; [SAVED] {len(content)} Chars")</p>
+<p>valid_cnt += 1</p>
+<p>if child_links:</p>
+<p>cnt = 0</p>
+<p>for l in child_links:</p>
+<p>if cnt &lt; 20: queue_items.append((l, "Link", r, d + 1, node_id)); cnt += 1</p>
+<p>context.close()</p>
+<p>browser.close()</p>
+<p>db.close();</p>
+<p>self.log("--- FINISHED ---")</p>
+<h1>---------------------------------------------------------</h1>
+<h1>GUI COMPONENTEN</h1>
+<h1>---------------------------------------------------------</h1>
+<p>class UniversalCrawlerTab(ttk.Frame):</p>
+<p>def __init__(self, parent, app):</p>
+<p>super().__init__(parent);</p>
+<p>self.app = app;</p>
+<p>self.setup_ui()</p>
+<p>def setup_ui(self):</p>
+<p>pnl = ttk.LabelFrame(self, text="Konfiguration", padding=10);</p>
+<p>pnl.pack(fill="x", padx=10, pady=5)</p>
+<p>self.v_src = tk.StringVar(value="search")</p>
+<p>r1 = ttk.Radiobutton(pnl, text="🔍 Suche", variable=self.v_src, value="search", command=self.upd);</p>
+<p>r1.grid(row=0, column=0)</p>
+<p>ToolTip(r1, "Nutzt DuckDuckGo (API oder Browser) um URLs zu finden.")</p>
+<p>r2 = ttk.Radiobutton(pnl, text="📂 Direkt/Datei", variable=self.v_src, value="direct", command=self.upd);</p>
+<p>r2.grid(row=0, column=1)</p>
+<p>ToolTip(r2, "Crawlt eine spezifische URL oder eine Liste aus einer .txt Datei.")</p>
+<p>ttk.Label(pnl, text="Input:").grid(row=0, column=2, padx=(10, 0));</p>
+<p>self.e_in = ttk.Entry(pnl, width=30);</p>
+<p>self.e_in.grid(row=0, column=3)</p>
+<p>self.b_file = ttk.Button(pnl, text="...", width=3, command=self.pick, state="disabled");</p>
+<p>self.b_file.grid(row=0, column=4)</p>
+<p>ttk.Label(pnl, text="Sprachen:").grid(row=0, column=5, padx=(10, 0));</p>
+<p>self.e_l = ttk.Entry(pnl, width=10);</p>
+<p>self.e_l.insert(0, "de,en");</p>
+<p>self.e_l.grid(row=0, column=6)</p>
+<p>ToolTip(self.e_l, "Kommagetrennt (de,en,fr). Nur für Suchmodus relevant.")</p>
+<p>frame_mode = ttk.Frame(pnl);</p>
+<p>frame_mode.grid(row=1, columnspan=7, pady=10, sticky="w")</p>
+<p>ttk.Label(frame_mode, text="Modus:").pack(side="left")</p>
+<p>self.cb_mode = ttk.Combobox(frame_mode,</p>
+<p>values=["0: Nur URLs sammeln", "1: + Meta Beschreibung", "2: + Volltext (Content)",</p>
+<p>"3: + Linkliste (Level 1)", "4: + Deep Links (Level 2)"], width=30);</p>
+<p>self.cb_mode.current(2);</p>
+<p>self.cb_mode.pack(side="left", padx=5)</p>
+<p>ToolTip(self.cb_mode,</p>
+<p>"Bestimmt, wie tief eine gefundene Seite analysiert wird.\n3 &amp; 4 erstellen Baumstrukturen.")</p>
+<p>self.v_rec = tk.BooleanVar(value=False);</p>
+<p>c_rec = ttk.Checkbutton(frame_mode, text="Rekursiv", variable=self.v_rec);</p>
+<p>c_rec.pack(side="left", padx=10)</p>
+<p>ToolTip(c_rec, "Wenn aktiv, werden gefundene Links erneut gescannt (entsprechend dem Modus).")</p>
+<p>ttk.Label(frame_mode, text="Ziel (Valid):").pack(side="left", padx=(10, 0));</p>
+<p>self.s_valid = ttk.Spinbox(frame_mode, from_=1, to=1000, width=5);</p>
+<p>self.s_valid.set(20);</p>
+<p>self.s_valid.pack(side="left")</p>
+<p>ToolTip(self.s_valid, "Crawler sucht so lange weiter, bis diese Anzahl an ECHTEN Treffern erreicht ist.")</p>
+<p>frame_opt = ttk.Frame(pnl);</p>
+<p>frame_opt.grid(row=2, columnspan=7, pady=5, sticky="w")</p>
+<p>self.v_vis = tk.BooleanVar(value=True);</p>
+<p>c1 = ttk.Checkbutton(frame_opt, text="Sichtbar", variable=self.v_vis);</p>
+<p>c1.pack(side="left")</p>
+<p>ToolTip(c1, "Zeigt den Browser an. Wichtig für Visuelle Suche.")</p>
+<p>self.v_tor = tk.BooleanVar(value=False);</p>
+<p>c2 = ttk.Checkbutton(frame_opt, text="Tor", variable=self.v_tor);</p>
+<p>c2.pack(side="left", padx=5)</p>
+<p>ToolTip(c2, "Leitet Traffic über Tor (SOCKS5).")</p>
+<p>self.v_tr = tk.BooleanVar(value=False);</p>
+<p>c3 = ttk.Checkbutton(frame_opt, text="Übersetzen", variable=self.v_tr);</p>
+<p>c3.pack(side="left", padx=5)</p>
+<p>ToolTip(c3, "Übersetzt den Suchbegriff automatisch.")</p>
+<p>self.v_sm = tk.BooleanVar(value=True);</p>
+<p>c4 = ttk.Checkbutton(frame_opt, text="Smart Filter", variable=self.v_sm);</p>
+<p>c4.pack(side="left", padx=5)</p>
+<p>ToolTip(c4, "Filtert falsche Sprachen und Müll-Seiten.")</p>
+<p>self.v_strict = tk.BooleanVar(value=True);</p>
+<p>c5 = ttk.Checkbutton(frame_opt, text="Zwang: Keyword", variable=self.v_strict);</p>
+<p>c5.pack(side="left", padx=5)</p>
+<p>ToolTip(c5, "Speichert NUR, wenn das Suchwort im Text der Seite vorkommt.")</p>
+<p>ttk.Button(pnl, text="🚀 STARTEN", command=self.run).grid(row=0, column=7, rowspan=3, padx=10, sticky="nsew")</p>
+<p>self.log_txt = scrolledtext.ScrolledText(self, height=15, bg="black", fg="lime");</p>
+<p>self.log_txt.pack(fill="both", expand=True, padx=10)</p>
+<p>def log(self, m):</p>
+<p>self.log_txt.insert(tk.END, m + "\n"); self.log_txt.see(tk.END)</p>
+<p>def pick(self):</p>
+<p>f = filedialog.askopenfilename();</p>
+<p>if f: self.e_in.delete(0, tk.END); self.e_in.insert(0, f)</p>
+<p>def upd(self):</p>
+<p>if self.v_src.get() == "direct":</p>
+<p>self.b_file.config(state="normal"); self.e_l.config(state="disabled"); self.v_strict.set(False)</p>
+<p>else:</p>
+<p>self.b_file.config(state="disabled"); self.e_l.config(state="normal")</p>
+<p>def run(self):</p>
+<p>params = {</p>
+<p>'query': self.e_in.get(), 'source': self.v_src.get(), 'langs': self.e_l.get().split(','),</p>
+<p>'tor': self.v_tor.get(), 'visible': self.v_vis.get(), 'trans': self.v_tr.get(),</p>
+<p>'smart': self.v_sm.get(), 'strict': self.v_strict.get(),</p>
+<p>'mode_depth': int(self.cb_mode.get().split(":")[0]),</p>
+<p>'recursive': self.v_rec.get(), 'target_valid': int(self.s_valid.get())</p>
+<p>}</p>
+<p>w = UniversalCrawlerWorker(self.app.app_config, self.log)</p>
+<p>threading.Thread(target=w.run, args=(params,), daemon=True).start()</p>
+<p>class VisuTab(ttk.Frame):</p>
+<p>def __init__(self, parent, app):</p>
+<p>super().__init__(parent);</p>
+<p>self.app = app;</p>
+<p>self.df = None;</p>
+<p>self.setup_ui()</p>
+<p>def setup_ui(self):</p>
+<p>top = ttk.Frame(self);</p>
+<p>top.pack(fill="x", padx=10);</p>
+<p>ttk.Button(top, text="Laden", command=self.load).pack(side="left")</p>
+<p>self.nb = ttk.Notebook(self);</p>
+<p>self.nb.pack(fill="both", expand=True)</p>
+<p>self.tab_tbl = ttk.Frame(self.nb);</p>
+<p>self.nb.add(self.tab_tbl, text="Tabelle")</p>
+<p>tbl_frame = ttk.Frame(self.tab_tbl);</p>
+<p>tbl_frame.pack(fill="both", expand=True)</p>
+<p>self.tree = ttk.Treeview(tbl_frame, columns=("ID", "PID", "URL", "Title"), show="headings");</p>
+<p>self.tree.pack(side="left", fill="both", expand=True)</p>
+<p>sc = ttk.Scrollbar(tbl_frame, orient="vertical", command=self.tree.yview);</p>
+<p>sc.pack(side="right", fill="y");</p>
+<p>self.tree.configure(yscroll=sc.set)</p>
+<p>for c in ("ID", "PID", "URL", "Title"): self.tree.heading(c, text=c)</p>
+<p>self.tree.bind("&lt;<TreeviewSelect>&gt;", self.on_tbl_sel)</p>
+<p>self.ctx_menu = Menu(self, tearoff=0)</p>
+<p>self.ctx_menu.add_command(label="Deep Crawl (mit Keyword)", command=lambda: self.launch_deep(True))</p>
+<p>self.ctx_menu.add_command(label="Sitemap / Full Scan (ohne Keyword)", command=lambda: self.launch_deep(False))</p>
+<p>self.tree.bind("<Button-3>", self.show_ctx)</p>
+<p>self.txt_preview = scrolledtext.ScrolledText(self.tab_tbl, height=10, bg="#eee");</p>
+<p>self.txt_preview.pack(fill="x", padx=5, pady=5)</p>
+<p>self.tab_graph = ttk.Frame(self.nb);</p>
+<p>self.nb.add(self.tab_graph, text="Baum-Graph")</p>
+<p>self.canv = ttk.Frame(self.tab_graph);</p>
+<p>self.canv.pack(fill="both", expand=True)</p>
+<p>def load(self):</p>
+<p>db = DatabaseManager(None, self.app.app_config);</p>
+<p>conn = db.get_conn_pandas()</p>
+<p>if not conn: return</p>
+<p>self.df = pd.read_sql(</p>
+<p>"SELECT id, parent_id, url, title, raw_content FROM crawled_data ORDER BY id DESC LIMIT 500", conn);</p>
+<p>conn.close()</p>
+<p>for i in self.tree.get_children(): self.tree.delete(i)</p>
+<p>for _, r in self.df.iterrows(): self.tree.insert("", "end",</p>
+<p>values=(r['id'], r['parent_id'], r['url'], r['title']))</p>
+<p>self.draw_graph(self.df)</p>
+<p>def show_ctx(self, event):</p>
+<p>item = self.tree.identify_row(event.y)</p>
+<p>if item:</p>
+<p>self.tree.selection_set(item);</p>
+<p>self.ctx_menu.post(event.x_root, event.y_root)</p>
+<p>def launch_deep(self, use_keyword):</p>
+<p>sel = self.tree.selection()</p>
+<p>if not sel: return</p>
+<p>vals = self.tree.item(sel[0])['values']</p>
+<p>url = vals[2]</p>
+<p>crawler_tab = self.app.tabs_map["crawler"]</p>
+<p>crawler_tab.e_in.delete(0, tk.END);</p>
+<p>crawler_tab.e_in.insert(0, url)</p>
+<p>crawler_tab.v_src.set("direct");</p>
+<p>crawler_tab.upd()</p>
+<p>crawler_tab.cb_mode.current(4)</p>
+<p>crawler_tab.v_rec.set(True)</p>
+<p>crawler_tab.v_strict.set(use_keyword)</p>
+<p>self.app.nb.select(crawler_tab)</p>
+<p>messagebox.showinfo("Deep Crawl", f"URL übernommen: {url}\nModus wurde eingestellt.\nBitte 'STARTEN' klicken.")</p>
+<p>def on_tbl_sel(self, e):</p>
+<p>sel = self.tree.selection()</p>
+<p>if not sel: return</p>
+<p>iid = self.tree.item(sel[0])['values'][0]</p>
+<p>row = self.df[self.df['id'] == iid].iloc[0]</p>
+<p>self.txt_preview.delete("1.0", tk.END);</p>
+<p>self.txt_preview.insert(tk.END, row['raw_content'] or "")</p>
+<p>def draw_graph(self, df):</p>
+<p>for w in self.canv.winfo_children(): w.destroy()</p>
+<p>G = nx.DiGraph();</p>
+<p>node_map = {}</p>
+<p>for _, r in df.iterrows():</p>
+<p>G.add_node(r['id']);</p>
+<p>node_map[r['id']] = r['url']</p>
+<p>if r['parent_id']: G.add_edge(r['parent_id'], r['id'])</p>
+<p>fig, ax = plt.subplots(figsize=(6, 5));</p>
+<p>pos = nx.spring_layout(G, k=0.2)</p>
+<p>nodes = nx.draw_networkx_nodes(G, pos, ax=ax, node_size=100, node_color='skyblue')</p>
+<p>nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.5, arrows=True)</p>
+<p>annot = ax.annotate("", xy=(0, 0), xytext=(10, 10), textcoords="offset points",</p>
+<p>bbox=dict(boxstyle="round", fc="w"), arrowprops=dict(arrowstyle="-&gt;"));</p>
+<p>annot.set_visible(False)</p>
+<p>def update_annot(ind):</p>
+<p>idx = ind["ind"][0];</p>
+<p>nid = list(G.nodes())[idx];</p>
+<p>url = node_map.get(nid, "?")</p>
+<p>annot.xy = pos[nid];</p>
+<p>annot.set_text(f"ID {nid}\n{url}")</p>
+<p>def hover(event):</p>
+<p>vis = annot.get_visible()</p>
+<p>if event.inaxes == ax:</p>
+<p>cont, ind = nodes.contains(event)</p>
+<p>if cont:</p>
+<p>update_annot(ind); annot.set_visible(True); fig.canvas.draw_idle()</p>
+<p>else:</p>
+<p>if vis: annot.set_visible(False); fig.canvas.draw_idle()</p>
+<p>fig.canvas.mpl_connect("motion_notify_event", hover)</p>
+<p>c = FigureCanvasTkAgg(fig, master=self.canv);</p>
+<p>c.draw();</p>
+<p>c.get_tk_widget().pack(fill="both", expand=True)</p>
+<p>class GeminiTab(ttk.Frame):</p>
+<p>def __init__(self, parent, app):</p>
+<p>super().__init__(parent);</p>
+<p>self.app = app;</p>
+<p>self.setup_ui()</p>
+<p>def setup_ui(self):</p>
+<p>if not CRAWL4AI_AVAILABLE:</p>
+<p>ttk.Label(self, text="Crawl4AI fehlt.", fg="red").pack(pady=20)</p>
+<p>return</p>
+<p>lbl = tk.Label(self, text="Gemini URLs:", font=("Segoe UI", 11, "bold"));</p>
+<p>lbl.pack(anchor="w", padx=20, pady=(20, 5))</p>
+<p>self.url_input = scrolledtext.ScrolledText(self, height=10);</p>
+<p>self.url_input.pack(fill="x", padx=20)</p>
+<p>self.headless_var = tk.BooleanVar(value=False);</p>
+<p>tk.Checkbutton(self, text="Headless", variable=self.headless_var).pack(anchor="w", padx=20)</p>
+<p>btn = tk.Button(self, text="START GEMINI", command=self.start_thread, bg="#d32f2f", fg="white", height=2);</p>
+<p>btn.pack(fill="x", padx=20, pady=20)</p>
+<p>self.log_area = scrolledtext.ScrolledText(self, height=12, bg="#1e1e1e", fg="#00ff00");</p>
+<p>self.log_area.pack(fill="x", side="bottom", padx=10, pady=10)</p>
+<p>if os.path.exists("urls.txt"):</p>
+<p>with open("urls.txt", "r", encoding="utf-8") as f: self.url_input.insert("1.0", f.read())</p>
+<p>def log(self, msg):</p>
+<p>self.log_area.insert(tk.END, f"[{datetime.now().strftime('%H:%M:%S')}] {msg}\n"); self.log_area.see(tk.END)</p>
+<p>def start_thread(self):</p>
+<p>urls = self.url_input.get("1.0", tk.END).strip().splitlines()</p>
+<p>urls = [u.strip() for u in urls if "gemini.google.com" in u]</p>
+<p>if not urls: messagebox.showerror("Fehler", "Keine URLs."); return</p>
+<p>threading.Thread(target=self.run_async, args=(urls,), daemon=True).start()</p>
+<p>def run_async(self, urls):</p>
+<p>try:</p>
+<p>asyncio.run(self.crawl_process(urls))</p>
+<p>except Exception as e:</p>
+<p>self.log(f"Error: {e}")</p>
+<p>async def crawl_process(self, urls):</p>
+<p>self.log("Starte Crawl4AI...")</p>
+<p>js_scroll = "window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;"</p>
+<p>out = "crawl_results";</p>
+<p>os.makedirs(out, exist_ok=True);</p>
+<p>sc_dir = os.path.join(out, "screenshots");</p>
+<p>os.makedirs(sc_dir, exist_ok=True)</p>
+<p>b_cfg = BrowserConfig(verbose=True, headless=self.headless_var.get(), user_data_dir=CHROME_USER_DATA_DIR,</p>
+<p>use_managed_browser=True)</p>
+<p>r_cfg = CrawlerRunConfig(cache_mode=CacheMode.BYPASS, js_code=js_scroll, wait_for="share-viewer",</p>
+<p>screenshot=True, magic=True)</p>
+<p>data = []</p>
+<p>async with AsyncWebCrawler(config=b_cfg) as crawler:</p>
+<p>for i, url in enumerate(urls):</p>
+<p>self.log(f"Lade {url}...")</p>
+<p>res = await crawler.arun(url=url, config=r_cfg)</p>
+<p>if not res.success: self.log(f"Fehler: {res.error_message}"); continue</p>
+<p>spath = None</p>
+<p>if res.screenshot:</p>
+<p>sdata = base64.b64decode(res.screenshot)</p>
+<p>fname = f"chat_{int(datetime.now().timestamp())}_{i}.png";</p>
+<p>spath = os.path.join(sc_dir, fname)</p>
+<p>with open(spath, "wb") as f: f.write(sdata)</p>
+<p>cdata = self.parse_html(res.html, url);</p>
+<p>cdata['screenshot_path'] = spath</p>
+<p>data.append(cdata);</p>
+<p>self.log(f"OK: {len(cdata['turns'])} Turns.")</p>
+<p>await asyncio.sleep(2)</p>
+<p>self.app.root.after(0, lambda: ReviewWindow(self.app.root, data, self.save_report))</p>
+<p>def clean_html(self, el):</p>
+<p>if not el: return ""</p>
+<p>for s in ["script", "iframe", "noscript", "svg", "style"]:</p>
+<p>for t in el.select(s): t.decompose()</p>
+<p>return el.decode_contents()</p>
+<p>def parse_html(self, html_c, url):</p>
+<p>soup = BeautifulSoup(html_c, 'html.parser')</p>
+<p>main = soup.find('share-viewer') or soup.find('main') or soup.body</p>
+<p>date = datetime.now().strftime('%d.%m.%Y');</p>
+<p>turns = []</p>
+<p>if main:</p>
+<p>processed = set();</p>
+<p>block = []</p>
+<p>for el in main.find_all(True):</p>
+<p>if el in processed: continue</p>
+<p>cls = el.get("class", []) or []</p>
+<p>if 'user-query-bubble-with-background' in cls or el.name == 'user-query-container':</p>
+<p>if block: turns.append({"role": "USER", "html": f"<pre>{chr(10).join(block)}</pre>",</p>
+<p>"text": chr(10).join(block)}); block = []</p>
+<p>processed.add(el);</p>
+<p>[processed.add(c) for c in el.find_all(True)]</p>
+<p>turns.append({"role": "USER", "html": self.clean_html(el), "text": el.get_text()})</p>
+<p>elif 'query-text-line' in cls:</p>
+<p>processed.add(el);</p>
+<p>block.append(el.get_text())</p>
+<p>elif 'message-content' in cls or (</p>
+<p>el.has_attr('data-test-id') and el['data-test-id'] == 'model-response'):</p>
+<p>if block: turns.append({"role": "USER", "html": f"<pre>{chr(10).join(block)}</pre>",</p>
+<p>"text": chr(10).join(block)}); block = []</p>
+<p>processed.add(el);</p>
+<p>[processed.add(c) for c in el.find_all(True)]</p>
+<p>turns.append({"role": "MODEL", "html": self.clean_html(el), "text": el.get_text()})</p>
+<p>if block: turns.append(</p>
+<p>{"role": "USER", "html": f"<pre>{chr(10).join(block)}</pre>", "text": chr(10).join(block)})</p>
+<p>t = "Chat Export";</p>
+<p>h1 = soup.find('h1')</p>
+<p>if h1: t = h1.get_text().strip()</p>
+<p>return {"title": t, "url": url, "chat_date": date, "turns": turns}</p>
+<p>def save_report(self, data):</p>
+<p>p = filedialog.asksaveasfilename(defaultextension=".html", filetypes=[("HTML", "*.html")])</p>
+<p>if not p: return</p>
+<p>css = "body{font-family:sans-serif;padding:20px;background:#eee}.chat{background:white;padding:20px;margin-bottom:20px;border-radius:8px}.role-USER{background:#e3f2fd;padding:15px;margin:10px 0;border-left:5px solid #2196f3}.role-MODEL{background:#fff;padding:15px;margin:10px 0;border-left:5px solid #4caf50}img.screenshot{max-width:100%;border:1px solid #ccc;margin-top:10px}pre{background:#222;color:#fff;padding:10px;overflow-x:auto}"</p>
+<p>h = f"<html><head><meta charset='utf-8'><style>{css}</style></head><body><h1>Gemini Archiv</h1>"</p>
+<p>for c in data:</p>
+<p>scr = f"<br><b>Beweis:</b><br><img class='screenshot' src='file:///{c['screenshot\_path'].replace(os.sep, '/')}' />" if c.get(</p>
+<p>'screenshot_path') else ""</p>
+<p>h += f"<div class='chat'><h2>{c['title']}</h2><p>{c['url']} | {c['chat_date']}</p>"</p>
+<p>for t in c['turns']: h += f"<div class='role-{t['role']}'><b>{t['role']}</b><br>{t['html']}</div>"</p>
+<p>h += scr + "</div>"</p>
+<p>h += "</body></html>"</p>
+<p>with open(p, "w", encoding="utf-8") as f:</p>
+<p>f.write(h)</p>
+<p>messagebox.showinfo("OK", f"Gespeichert: {p}")</p>
+<p>class SettingsDialog(tk.Toplevel):</p>
+<p>def __init__(self, p, c, cb):</p>
+<p>super().__init__(p);</p>
+<p>self.cb = cb;</p>
+<p>self.entries = {}</p>
+<p>for i, k in enumerate(["db_host", "db_port", "db_user", "db_password", "db_name", "tor_port"]):</p>
+<p>ttk.Label(self, text=k).grid(row=i, column=0);</p>
+<p>e = ttk.Entry(self);</p>
+<p>e.insert(0, c.get(k, ""));</p>
+<p>e.grid(row=i, column=1)</p>
+<p>if "pass" in k: e.config(show="*")</p>
+<p>self.entries[k] = e</p>
+<p>ttk.Button(self, text="Speichern", command=self.save).grid(row=99, columnspan=2)</p>
+<p>def save(self):</p>
+<p>d = {k: v.get().strip() for k, v in self.entries.items()};</p>
+<p>save_config_to_file(d);</p>
+<p>self.cb(d);</p>
+<p>self.destroy()</p>
+<p>class MainApp:</p>
+<p>def __init__(self, root):</p>
+<p>self.root = root;</p>
+<p>self.root.title("Universal Web Spider v20.1 (Syntax Cleaned)")</p>
+<p>self.root.geometry("1200x850")</p>
+<p>self.app_config = load_config()</p>
+<p>m = Menu(root);</p>
+<p>root.config(menu=m);</p>
+<p>fm = Menu(m, tearoff=0);</p>
+<p>m.add_cascade(label="Datei", menu=fm)</p>
+<p>fm.add_command(label="Einstellungen", command=self.settings)</p>
+<p>self.nb = ttk.Notebook(root);</p>
+<p>self.nb.pack(fill="both", expand=True)</p>
+<h1>Tab References</h1>
+<p>self.tabs_map = {}</p>
+<p>self.tabs_map["crawler"] = UniversalCrawlerTab(self.nb, self)</p>
+<p>self.nb.add(self.tabs_map["crawler"], text="🕷️ Smart Crawler &amp; Harvester")</p>
+<p>self.nb.add(VisuTab(self.nb, self), text="🌳 Daten &amp; Visu")</p>
+<p>self.nb.add(GeminiTab(self.nb, self), text="♊ Gemini Crawler")</p>
+<p>def settings(self): SettingsDialog(self.root, self.app_config, self.update_conf)</p>
+<p>def update_conf(self, nc): self.app_config = nc; messagebox.showinfo("OK", "Gespeichert.")</p>
+<p>if __name__ == "__main__":</p>
+<p>root = tk.Tk();</p>
+<p>MainApp(root);</p>
+<p>root.mainloop()</p></div><img src='crawl_data/img_a1030acd18.jpg'><img src='crawl_data/img_92e2c825b8.jpg'><img src='crawl_data/img_4628e5204c.jpg'><img src='crawl_data/img_b95952ebde.jpg'><img src='crawl_data/img_31f631b916.jpg'></div></div><div class='role-model'><div class='role-label model'>MODEL</div><div class='bubble-content'><div class='content'><p>Hier ist der optimierte Code. Ich habe die Lösungen für deine drei Hauptprobleme (Stocken bei JS, 7-Ergebnisse-Limit, ID/URL-Duplikate) direkt in die Klassen <code>UniversalCrawlerWorker</code> und <code>VisuTab</code> integriert.</p>
+<h3>Zusammenfassung der Änderungen</h3>
+<ol>
+<li><strong>Infinite Scroll (DDG):</strong> Im Such-Teil (<code>PHASE 1</code>) wurde eine Schleife hinzugefügt, die automatisch nach unten scrollt und auf den "Mehr laden"-Button klickt, bis das Ziel (<code>target_valid</code>) erreicht ist.</li>
+<li><strong>JS-Wartezeit:</strong> <code>page.goto(..., wait_until="networkidle")</code> sorgt dafür, dass GitHub-Repos und andere React-Inhalte fertig geladen sind, bevor Text extrahiert wird.</li>
+<li><strong>URL-Bereinigung:</strong> URLs werden jetzt strikt am <code>#</code> abgeschnitten (<code>u.split('#')[0]</code>), damit Anker-Links keine Duplikate erzeugen.</li>
+<li><strong>Datenbank/Visu Fix:</strong> In <code>VisuTab</code> werden <code>NaN</code> Werte abgefangen und IDs explizit zu Integern konvertiert, damit der Graph sauber zeichnet.</li>
+</ol>
+<p>Hier ist der vollständige, korrigierte Code (Ersetze dein Skript damit):</p>
+<pre><code>import tkinter as tk
+from tkinter import ttk, scrolledtext, messagebox, Menu, filedialog, Toplevel
+import threading
+import time
+import sys
+import webbrowser
+import socket
+import mysql.connector
+from mysql.connector import errorcode
+import html
+import json
+import os
+import warnings
+import re
+import pandas as pd
+import trafilatura
+from langdetect import detect, detect_langs, LangDetectException
+import networkx as nx
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
+import asyncio
+import base64
+from datetime import datetime
+from bs4 import BeautifulSoup
+
+# --- 1. CRITICAL SETUP &amp; GLOBALS ---
+sys.stdout.reconfigure(encoding='utf-8')
+os.environ[&quot;PYTHONWARNINGS&quot;] = &quot;ignore&quot;
+warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=UserWarning)
+
+# Globaler Pfad für Chrome Profil
+CHROME_USER_DATA_DIR = os.path.join(os.getenv('LOCALAPPDATA'), 'Google', 'Chrome',
+                                    'User Data') if os.name == 'nt' else &quot;&quot;
+
+# --- 2. IMPORTS ---
+try:
+    import socks
+except ImportError:
+    pass
+
+try:
+    from duckduckgo_search import DDGS
+except ImportError:
+    try:
+        from ddgs import DDGS
+    except ImportError:
+        pass
+
+from deep_translator import GoogleTranslator
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+
+CRAWL4AI_AVAILABLE = False
+try:
+    from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+    CRAWL4AI_AVAILABLE = True
+except ImportError:
+    pass
+
+# ---------------------------------------------------------
+# 3. KONFIGURATION
+# ---------------------------------------------------------
+CONFIG_FILE = &quot;crawler_config.json&quot;
+DEFAULT_CONFIG = {
+    &quot;db_host&quot;: &quot;localhost&quot;, &quot;db_port&quot;: &quot;3306&quot;,
+    &quot;db_user&quot;: &quot;root&quot;, &quot;db_password&quot;: &quot;&quot;,
+    &quot;db_name&quot;: &quot;search_index_v3&quot;, &quot;tor_port&quot;: &quot;9050&quot;
+}
+
+REGION_MAPPING = {
+    'de': {'ddg': 'de-de', 'locale': 'de-DE', 'header': 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7'},
+    'en': {'ddg': 'us-en', 'locale': 'en-US', 'header': 'en-US,en;q=0.9'},
+    'fr': {'ddg': 'fr-fr', 'locale': 'fr-FR', 'header': 'fr-FR,fr;q=0.9,en;q=0.8'},
+    'es': {'ddg': 'es-es', 'locale': 'es-ES', 'header': 'es-ES,es;q=0.9,en;q=0.8'},
+    'it': {'ddg': 'it-it', 'locale': 'it-IT', 'header': 'it-IT,it;q=0.9,en;q=0.8'},
+    'cn': {'ddg': 'cn-zh', 'locale': 'zh-CN', 'header': 'zh-CN,zh;q=0.9,en;q=0.8'}
+}
+DEFAULT_REGION_CFG = {'ddg': 'wt-wt', 'locale': 'en-US', 'header': 'en-US,en;q=0.9'}
+
+DOMAIN_BLACKLIST = [
+    &quot;zhihu.com&quot;, &quot;bilibili.com&quot;, &quot;facebook.com&quot;, &quot;twitter.com&quot;, &quot;instagram.com&quot;,
+    &quot;youtube.com&quot;, &quot;tiktok.com&quot;, &quot;linkedin.com&quot;, &quot;google.com&quot;, &quot;duckduckgo.com&quot;,
+    &quot;bing.com&quot;, &quot;yahoo.com&quot;, &quot;baidu.com&quot;, &quot;yandex.com&quot;
+]
+
+JUNK_PATTERNS = [
+    r'/login', r'/signin', r'/signup', r'/register', r'/auth',
+    r'403 forbidden', r'access denied', r'captcha', r'verify you are a human',
+    r'security check', r'cloudﬂare', r'{&quot;message&quot;:', r'password',
+    r'forgot-password', r'reset-password'
+]
+
+
+# ---------------------------------------------------------
+# 4. UTILS &amp; QUALITY GATE
+# ---------------------------------------------------------
+class ToolTip:
+    def __init__(self, widget, text):
+        self.widget = widget;
+        self.text = text;
+        self.tip_window = None
+        widget.bind(&quot;&lt;Enter&gt;&quot;, self.show_tip);
+        widget.bind(&quot;&lt;Leave&gt;&quot;, self.hide_tip)
+
+    def show_tip(self, event=None):
+        if self.tip_window or not self.text: return
+        x, y, _, _ = self.widget.bbox(&quot;insert&quot;)
+        x += self.widget.winfo_rootx() + 25;
+        y += self.widget.winfo_rooty() + 25
+        self.tip_window = tw = Toplevel(self.widget);
+        tw.wm_overrideredirect(True);
+        tw.wm_geometry(f&quot;+{x}+{y}&quot;)
+        tk.Label(tw, text=self.text, justify=tk.LEFT, background=&quot;#ffffe0&quot;, relief=tk.SOLID, borderwidth=1,
+                 font=(&quot;tahoma&quot;, &quot;8&quot;, &quot;normal&quot;)).pack(ipadx=1)
+
+    def hide_tip(self, event=None):
+        if self.tip_window: self.tip_window.destroy(); self.tip_window = None
+
+
+def load_config():
+    if os.path.exists(CONFIG_FILE):
+        try:
+            return json.load(open(CONFIG_FILE, 'r'))
+        except:
+            return DEFAULT_CONFIG
+    return DEFAULT_CONFIG
+
+
+def save_config_to_file(data): json.dump(data, open(CONFIG_FILE, 'w'), indent=4)
+
+
+def setup_proxy(use_tor, port, log_func):
+    try:
+        if use_tor:
+            socks.set_default_proxy(socks.SOCKS5, &quot;localhost&quot;, port);
+            socket.socket = socks.socksocket
+            log_func(f&quot;[NET] Tor Proxy (:{port}) aktiv.&quot;)
+        else:
+            socks.set_default_proxy();
+            socket.socket = socket._socketobject if hasattr(socket, &quot;_socketobject&quot;) else socket.socket
+            log_func(&quot;[NET] Direkte Verbindung.&quot;)
+    except Exception as e:
+        log_func(f&quot;[NET ERR] {e}&quot;)
+
+# Hilfsfunktion zur URL Bereinigung (NEU)
+def clean_url(url):
+    if not url: return &quot;&quot;
+    # Entfernt alles nach # (Anchor Links) und trailing slashes
+    return url.split('#')[0].rstrip('/')
+
+class QualityGate:
+    @staticmethod
+    def is_url_allowed(url):
+        if not url or not url.startswith(&quot;http&quot;): return False
+        url_lower = url.lower()
+        for d in DOMAIN_BLACKLIST:
+            if d in url_lower: return False
+        for p in JUNK_PATTERNS:
+            if p.startswith(&quot;/&quot;) and p in url_lower: return False
+        return True
+
+    @staticmethod
+    def is_junk_content(title, content):
+        combined = (title + &quot; &quot; + content).lower()[:1500]
+        for p in JUNK_PATTERNS:
+            if p.replace(&quot;/&quot;, &quot;&quot;) in combined: return True
+        return False
+
+    @staticmethod
+    def contains_keyword(content, keyword):
+        if not keyword or not content: return True
+        return keyword.lower() in content.lower()
+
+    @staticmethod
+    def check_language(text, html_raw, target_lang):
+        # 1. HTML Meta Check
+        if html_raw:
+            try:
+                soup = BeautifulSoup(html_raw, 'html.parser')
+                html_tag = soup.find('html')
+                if html_tag and html_tag.has_attr('lang'):
+                    if html_tag['lang'].lower().startswith(target_lang): return True, &quot;Meta-Tag Match&quot;
+            except:
+                pass
+
+        # 2. Text Analyse
+        if len(text) &lt; 150: return True, &quot;Short (Pass)&quot;
+        try:
+            langs = detect_langs(text)
+            if langs[0].lang.startswith(target_lang): return True, f&quot;Text ({langs[0].prob:.2f})&quot;
+            if target_lang in ['de', 'en', 'fr', 'es'] and langs[0].lang in ['ru', 'zh-cn', 'ja', 'ar']:
+                return False, f&quot;Wrong Lang: {langs[0].lang}&quot;
+        except:
+            pass
+
+        return True, &quot;Fallback&quot;
+
+
+# ---------------------------------------------------------
+# 5. DATABASE MANAGER
+# ---------------------------------------------------------
+class DatabaseManager:
+    def __init__(self, logger_func, config):
+        self.log = logger_func;
+        self.config = config;
+        self.conn = None;
+        self.cursor = None
+
+    def connect(self):
+        try:
+            self.conn = mysql.connector.connect(
+                user=self.config['db_user'], password=self.config['db_password'],
+                host=self.config['db_host'], port=int(self.config['db_port']),
+                database=self.config['db_name'], raise_on_warnings=True
+            )
+            self.cursor = self.conn.cursor();
+            self.create_tables();
+            return True
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_BAD_DB_ERROR:
+                if self._create_db(): return self.connect()
+            if self.log: self.log(f&quot;[DB ERR] {err}&quot;)
+            return False
+
+    def _create_db(self):
+        try:
+            c = mysql.connector.connect(user=self.config['db_user'], password=self.config['db_password'],
+                                        host=self.config['db_host'], port=int(self.config['db_port']))
+            c.cursor().execute(f&quot;CREATE DATABASE IF NOT EXISTS {self.config['db_name']} DEFAULT CHARACTER SET utf8mb4&quot;)
+            c.close();
+            return True
+        except:
+            return False
+
+    def get_conn_pandas(self):
+        try:
+            return mysql.connector.connect(user=self.config['db_user'], password=self.config['db_password'],
+                                           host=self.config['db_host'], port=int(self.config['db_port']),
+                                           database=self.config['db_name'])
+        except:
+            return None
+
+    def create_tables(self):
+        try:
+            self.cursor.execute(
+                &quot;CREATE TABLE IF NOT EXISTS search_runs (id INT AUTO_INCREMENT PRIMARY KEY, query VARCHAR(255), lang VARCHAR(10), mode VARCHAR(50), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)&quot;)
+            self.cursor.execute(&quot;&quot;&quot;
+                                CREATE TABLE IF NOT EXISTS crawled_data
+                                (
+                                    id INT AUTO_INCREMENT PRIMARY KEY,
+                                    run_id INT,
+                                    parent_id INT DEFAULT NULL,
+                                    url VARCHAR(768), 
+                                    title TEXT, description TEXT, raw_content MEDIUMTEXT, escaped_content MEDIUMTEXT,
+                                    depth_level INT DEFAULT 0, search_rank INT DEFAULT 0, is_link_list BOOLEAN DEFAULT FALSE,
+                                    crawled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+                                    FOREIGN KEY (run_id) REFERENCES search_runs(id)
+                                )
+                                &quot;&quot;&quot;)
+            self.conn.commit()
+        except:
+            pass
+
+    def url_exists(self, url, run_id):
+        try:
+            # Checke auf saubere URL
+            clean = clean_url(url)
+            self.cursor.execute(&quot;SELECT id FROM crawled_data WHERE url = %s AND run_id = %s&quot;, (clean, run_id))
+            res = self.cursor.fetchone()
+            return res[0] if res else None
+        except:
+            return None
+
+    def save_node(self, run_id, parent_id, url, title, desc, content, depth, rank, is_list=False):
+        try:
+            clean = clean_url(url)
+            eid = self.url_exists(clean, run_id)
+            if eid: return eid, True
+            esc = html.escape(content) if content else &quot;&quot;
+            self.cursor.execute(&quot;&quot;&quot;
+                                INSERT INTO crawled_data (run_id, parent_id, url, title, description, raw_content,
+                                                          escaped_content, depth_level, search_rank, is_link_list)
+                                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)&quot;&quot;&quot;,
+                                (run_id, parent_id, clean, title, desc, content, esc, depth, rank, is_list))
+            self.conn.commit();
+            return self.cursor.lastrowid, False
+        except Exception as e:
+            if self.log: self.log(f&quot;[DB SAVE ERR] {e}&quot;)
+            return None, False
+
+    def close(self):
+        if self.conn: self.conn.close()
+
+
+# ---------------------------------------------------------
+# 6. UNIVERSAL CRAWLER WORKER (OPTIMIZED)
+# ---------------------------------------------------------
+class UniversalCrawlerWorker:
+    def __init__(self, cfg, log):
+        self.cfg = cfg; self.log = log
+
+    def run(self, params):
+        query = params['query'];
+        source = params['source'];
+        langs = params['langs']
+        use_tor = params['tor'];
+        visible = params['visible'];
+        trans = params['trans']
+        smart_filter = params['smart'];
+        strict_keyword = params['strict']
+        mode_depth = params['mode_depth'];
+        recursive = params['recursive'];
+        target_valid = params['target_valid']
+
+        tor_port = int(self.cfg.get(&quot;tor_port&quot;, 9050))
+        setup_proxy(use_tor, tor_port, self.log)
+
+        db = DatabaseManager(self.log, self.cfg)
+        if not db.connect(): return
+
+        with sync_playwright() as p:
+            proxy = {&quot;server&quot;: f&quot;socks5://localhost:{tor_port}&quot;} if use_tor else None
+            browser = p.chromium.launch(headless=not visible, proxy=proxy,
+                                        args=[&quot;--start-maximized&quot;, &quot;--disable-blink-features=AutomationControlled&quot;])
+
+            loop_langs = langs if source == &quot;search&quot; else [&quot;direct&quot;]
+
+            for lang in loop_langs:
+                l_cfg = REGION_MAPPING.get(lang)
+                if not isinstance(l_cfg, dict): l_cfg = DEFAULT_REGION_CFG
+
+                context = browser.new_context(
+                    viewport={&quot;width&quot;: 1280, &quot;height&quot;: 800},
+                    locale=l_cfg['locale'], timezone_id='UTC',
+                    extra_http_headers={&quot;Accept-Language&quot;: l_cfg['header']}
+                )
+                context.add_init_script(&quot;Object.defineProperty(navigator, 'webdriver', {get: () =&gt; undefined})&quot;)
+
+                # --- BLOCK MEDIA ---
+                def block_media(route):
+                    if route.request.resource_type in [&quot;image&quot;, &quot;media&quot;, &quot;font&quot;]:
+                        try: route.abort()
+                        except: pass
+                    else:
+                        try: route.continue_()
+                        except: pass
+
+                context.route(&quot;**/*&quot;, block_media)
+
+                queue_items = []
+
+                # PHASE 1: QUEUE FILL / SEARCH
+                if source == &quot;search&quot;:
+                    self.log(f&quot;--- SUCHE {lang.upper()} (Ziel: {target_valid}) ---&quot;)
+                    term = query
+                    if trans and lang != 'de':
+                        try: term = GoogleTranslator(source='auto', target=lang).translate(query)
+                        except: pass
+
+                    try:
+                        db.cursor.execute(&quot;INSERT INTO search_runs (query, lang, mode) VALUES (%s, %s, %s)&quot;,
+                                          (term, lang, f&quot;mode_{mode_depth}&quot;)); 
+                        run_id = db.cursor.lastrowid; db.conn.commit()
+                    except: continue
+
+                    if visible:
+                        self.log(&quot;[VISUAL] Starte Browser-Suche mit Scroll...&quot;)
+                        try:
+                            s_page = context.new_page()
+                            ddg_url = f&quot;https://duckduckgo.com/?q={term}&amp;kl={l_cfg['ddg']}&amp;t=h_&quot;
+                            s_page.goto(ddg_url)
+                            s_page.wait_for_selector(&quot;input[id='search_form_input']&quot;, timeout=5000)
+
+                            # --- NEUE LOGIK: SCROLLEN FÜR MEHR ERGEBNISSE ---
+                            found_links = set()
+                            attempts = 0
+
+                            while len(found_links) &lt; target_valid and attempts &lt; 10:
+                                # Links sammeln
+                                current_elements = s_page.locator(&quot;a[data-testid='result-title-a']&quot;).all()
+                                for el in current_elements:
+                                    try:
+                                        href = el.get_attribute(&quot;href&quot;)
+                                        if href and QualityGate.is_url_allowed(href):
+                                            found_links.add(href)
+                                    except: pass
+
+                                self.log(f&quot; -&gt; {len(found_links)} Kandidaten gefunden...&quot;)
+
+                                if len(found_links) &gt;= target_valid:
+                                    break
+
+                                # Scrollen
+                                s_page.keyboard.press(&quot;End&quot;)
+                                s_page.wait_for_timeout(1500)
+
+                                # Prüfen auf &quot;Mehr&quot; Button
+                                try:
+                                    more_btn = s_page.locator(&quot;.result--more__btn&quot;)
+                                    if more_btn.is_visible():
+                                        more_btn.click()
+                                        s_page.wait_for_timeout(1000)
+                                except: pass
+
+                                attempts += 1
+
+                            # In Queue übertragen
+                            cnt = 0
+                            for href in found_links:
+                                queue_items.append((clean_url(href), &quot;DDG Result&quot;, cnt + 1, 0, None))
+                                cnt += 1
+
+                            s_page.close()
+                            self.log(f&quot; -&gt; Queue gefüllt mit {len(queue_items)} URLs.&quot;)
+
+                        except Exception as e:
+                            self.log(f&quot;[VISUAL SEARCH ERR] {e}&quot;)
+                    else:
+                        # API Fallback (ohne Scroll, da API paginiert)
+                        try:
+                            with DDGS() as ddgs:
+                                res = list(ddgs.text(term, region=l_cfg.get('ddg', 'wt-wt'), max_results=target_valid * 2, backend=&quot;html&quot;))
+                                for idx, r in enumerate(res):
+                                    if QualityGate.is_url_allowed(r['href']):
+                                        queue_items.append((clean_url(r['href']), r['title'], idx + 1, 0, None))
+                        except Exception as e:
+                            self.log(f&quot;[API ERR] {e}&quot;)
+
+                else:
+                    self.log(f&quot;--- DIREKT ---&quot;)
+                    urls = [query] if query.startswith(&quot;http&quot;) else [] 
+                    # Falls File Input Logic existiert, hier anpassen
+                    if not urls: break
+
+                    try:
+                        db.cursor.execute(&quot;INSERT INTO search_runs (query, lang, mode) VALUES (%s, 'raw', 'direct')&quot;,
+                                          (os.path.basename(query)[:50],)); 
+                        run_id = db.cursor.lastrowid; db.conn.commit()
+                    except: continue
+
+                    for i, u in enumerate(urls): queue_items.append((clean_url(u), &quot;Start URL&quot;, i + 1, 0, None))
+
+                # PHASE 2: CRAWLING (Mit JS Wait)
+                visited = set()
+                valid_cnt = 0
+
+                while queue_items:
+                    if source == &quot;search&quot; and valid_cnt &gt;= target_valid:
+                        self.log(f&quot;*** ZIEL ERREICHT ({valid_cnt}) ***&quot;);
+                        break
+
+                    u, t, r, d, pid = queue_items.pop(0)
+
+                    # 1. URL BEREINIGEN
+                    u = clean_url(u)
+
+                    if u in visited: continue
+                    visited.add(u)
+
+                    if db.url_exists(u, run_id):
+                        self.log(f&quot; -&gt; [SKIP DB] {u[:30]}...&quot;)
+                        # Zählen wir als gefunden, um Endlosschleifen zu vermeiden
+                        # valid_cnt += 1; 
+                        continue
+
+                    self.log(f&quot;[NODE D{d}] {u[:40]}...&quot;)
+                    content = &quot;&quot;; desc = &quot;&quot;;
+                    child_links = []
+                    should_visit = (mode_depth &gt;= 1) or (d &gt; 0)
+
+                    if should_visit:
+                        try:
+                            page = context.new_page()
+                            page.set_extra_http_headers({&quot;Accept-Language&quot;: l_cfg['header']})
+                            try:
+                                # 2. LÖSUNG FÜR STOCKEN: NetworkIdle
+                                # Wartet bis keine Netzwerkverbindungen mehr offen sind (lädt JS nach)
+                                page.goto(u, timeout=30000, wait_until=&quot;networkidle&quot;) 
+                            except PlaywrightTimeout:
+                                self.log(&quot; -&gt; Timeout (NetworkIdle), versuche Content trotzdem...&quot;)
+                            except Exception as e:
+                                self.log(f&quot; -&gt; Load Error: {e}&quot;)
+                                page.close(); continue
+
+                            p_content = page.content()
+                            p_text = page.evaluate(&quot;document.body.innerText&quot;)
+                            p_title = page.title()
+
+                            if QualityGate.is_junk_content(p_title, p_text):
+                                self.log(&quot; -&gt; [DROP] Junk/Login&quot;)
+                                page.close(); continue
+
+                            if source == &quot;search&quot; and smart_filter:
+                                ok, msg = QualityGate.check_language(p_text, p_content, lang)
+                                if not ok:
+                                    self.log(f&quot; -&gt; [DROP] {msg}&quot;)
+                                    page.close(); continue
+
+                            if source == &quot;search&quot; and strict_keyword and query:
+                                if not QualityGate.contains_keyword(p_text, query):
+                                    self.log(&quot; -&gt; [DROP] Keyword fehlt.&quot;)
+                                    page.close(); continue
+
+                            if mode_depth &gt;= 1: 
+                                try: desc = page.locator('meta[name=&quot;description&quot;]').get_attribute(&quot;content&quot;) or &quot;&quot;
+                                except: pass
+
+                            # Trafilatura ist gut für Text, aber Playwright Text ist oft &quot;live&quot; genauer bei JS apps
+                            if mode_depth &gt;= 2: 
+                                content = trafilatura.extract(p_content) or p_text
+
+                            max_tree = 1 if mode_depth == 3 else 2 if mode_depth == 4 else 0
+                            limit = 3 if recursive else max_tree
+
+                            if d &lt; limit:
+                                hrefs = page.evaluate(&quot;Array.from(document.links).map(a =&gt; a.href)&quot;)
+                                for h in hrefs:
+                                    h_clean = clean_url(h)
+                                    if h_clean.startswith(&quot;http&quot;) and QualityGate.is_url_allowed(h_clean) and h_clean != u: 
+                                        child_links.append(h_clean)
+                            page.close()
+                        except Exception as e:
+                            self.log(f&quot; -&gt; [ERR] {e}&quot;)
+                            try: page.close()
+                            except: pass
+
+                    node_id, exists = db.save_node(run_id, pid, u, t, desc, content, d, r,
+                                                   is_list=(len(child_links) &gt; 0))
+
+                    if exists:
+                        self.log(&quot; -&gt; [DUP]&quot;);
+                    elif node_id:
+                        self.log(f&quot; -&gt; [SAVED] {len(content)} Chars&quot;)
+                        valid_cnt += 1
+                        if child_links:
+                            cnt = 0
+                            # Kinder hinzufügen
+                            for l in child_links:
+                                if cnt &lt; 15: # Limit pro Seite, um Explosion zu vermeiden
+                                    queue_items.append((l, &quot;Link&quot;, r, d + 1, node_id))
+                                    cnt += 1
+
+                context.close()
+            browser.close()
+        db.close();
+        self.log(&quot;--- FINISHED ---&quot;)
+
+
+# ---------------------------------------------------------
+# GUI COMPONENTEN
+# ---------------------------------------------------------
+class UniversalCrawlerTab(ttk.Frame):
+    def __init__(self, parent, app):
+        super().__init__(parent);
+        self.app = app;
+        self.setup_ui()
+
+    def setup_ui(self):
+        pnl = ttk.LabelFrame(self, text=&quot;Konfiguration&quot;, padding=10);
+        pnl.pack(fill=&quot;x&quot;, padx=10, pady=5)
+        self.v_src = tk.StringVar(value=&quot;search&quot;)
+        r1 = ttk.Radiobutton(pnl, text=&quot;🔍 Suche&quot;, variable=self.v_src, value=&quot;search&quot;, command=self.upd);
+        r1.grid(row=0, column=0)
+        ToolTip(r1, &quot;Nutzt DuckDuckGo (API oder Browser) um URLs zu finden.&quot;)
+        r2 = ttk.Radiobutton(pnl, text=&quot;📂 Direkt/Datei&quot;, variable=self.v_src, value=&quot;direct&quot;, command=self.upd);
+        r2.grid(row=0, column=1)
+        ToolTip(r2, &quot;Crawlt eine spezifische URL oder eine Liste aus einer .txt Datei.&quot;)
+        ttk.Label(pnl, text=&quot;Input:&quot;).grid(row=0, column=2, padx=(10, 0));
+        self.e_in = ttk.Entry(pnl, width=30);
+        self.e_in.grid(row=0, column=3)
+        self.b_file = ttk.Button(pnl, text=&quot;...&quot;, width=3, command=self.pick, state=&quot;disabled&quot;);
+        self.b_file.grid(row=0, column=4)
+        ttk.Label(pnl, text=&quot;Sprachen:&quot;).grid(row=0, column=5, padx=(10, 0));
+        self.e_l = ttk.Entry(pnl, width=10);
+        self.e_l.insert(0, &quot;de,en&quot;);
+        self.e_l.grid(row=0, column=6)
+        ToolTip(self.e_l, &quot;Kommagetrennt (de,en,fr). Nur für Suchmodus relevant.&quot;)
+
+        frame_mode = ttk.Frame(pnl);
+        frame_mode.grid(row=1, columnspan=7, pady=10, sticky=&quot;w&quot;)
+        ttk.Label(frame_mode, text=&quot;Modus:&quot;).pack(side=&quot;left&quot;)
+        self.cb_mode = ttk.Combobox(frame_mode,
+                                    values=[&quot;0: Nur URLs sammeln&quot;, &quot;1: + Meta Beschreibung&quot;, &quot;2: + Volltext (Content)&quot;,
+                                            &quot;3: + Linkliste (Level 1)&quot;, &quot;4: + Deep Links (Level 2)&quot;], width=30);
+        self.cb_mode.current(2);
+        self.cb_mode.pack(side=&quot;left&quot;, padx=5)
+        ToolTip(self.cb_mode,
+                &quot;Bestimmt, wie tief eine gefundene Seite analysiert wird.\n3 &amp; 4 erstellen Baumstrukturen.&quot;)
+        self.v_rec = tk.BooleanVar(value=False);
+        c_rec = ttk.Checkbutton(frame_mode, text=&quot;Rekursiv&quot;, variable=self.v_rec);
+        c_rec.pack(side=&quot;left&quot;, padx=10)
+        ToolTip(c_rec, &quot;Wenn aktiv, werden gefundene Links erneut gescannt (entsprechend dem Modus).&quot;)
+        ttk.Label(frame_mode, text=&quot;Ziel (Valid):&quot;).pack(side=&quot;left&quot;, padx=(10, 0));
+        self.s_valid = ttk.Spinbox(frame_mode, from_=1, to=1000, width=5);
+        self.s_valid.set(20);
+        self.s_valid.pack(side=&quot;left&quot;)
+        ToolTip(self.s_valid, &quot;Crawler sucht so lange weiter, bis diese Anzahl an ECHTEN Treffern erreicht ist.&quot;)
+
+        frame_opt = ttk.Frame(pnl);
+        frame_opt.grid(row=2, columnspan=7, pady=5, sticky=&quot;w&quot;)
+        self.v_vis = tk.BooleanVar(value=True);
+        c1 = ttk.Checkbutton(frame_opt, text=&quot;Sichtbar&quot;, variable=self.v_vis);
+        c1.pack(side=&quot;left&quot;)
+        ToolTip(c1, &quot;Zeigt den Browser an. Wichtig für Visuelle Suche.&quot;)
+        self.v_tor = tk.BooleanVar(value=False);
+        c2 = ttk.Checkbutton(frame_opt, text=&quot;Tor&quot;, variable=self.v_tor);
+        c2.pack(side=&quot;left&quot;, padx=5)
+        ToolTip(c2, &quot;Leitet Traffic über Tor (SOCKS5).&quot;)
+        self.v_tr = tk.BooleanVar(value=False);
+        c3 = ttk.Checkbutton(frame_opt, text=&quot;Übersetzen&quot;, variable=self.v_tr);
+        c3.pack(side=&quot;left&quot;, padx=5)
+        ToolTip(c3, &quot;Übersetzt den Suchbegriff automatisch.&quot;)
+        self.v_sm = tk.BooleanVar(value=True);
+        c4 = ttk.Checkbutton(frame_opt, text=&quot;Smart Filter&quot;, variable=self.v_sm);
+        c4.pack(side=&quot;left&quot;, padx=5)
+        ToolTip(c4, &quot;Filtert falsche Sprachen und Müll-Seiten.&quot;)
+        self.v_strict = tk.BooleanVar(value=True);
+        c5 = ttk.Checkbutton(frame_opt, text=&quot;Zwang: Keyword&quot;, variable=self.v_strict);
+        c5.pack(side=&quot;left&quot;, padx=5)
+        ToolTip(c5, &quot;Speichert NUR, wenn das Suchwort im Text der Seite vorkommt.&quot;)
+
+        ttk.Button(pnl, text=&quot;🚀 STARTEN&quot;, command=self.run).grid(row=0, column=7, rowspan=3, padx=10, sticky=&quot;nsew&quot;)
+        self.log_txt = scrolledtext.ScrolledText(self, height=15, bg=&quot;black&quot;, fg=&quot;lime&quot;);
+        self.log_txt.pack(fill=&quot;both&quot;, expand=True, padx=10)
+
+    def log(self, m):
+        self.log_txt.insert(tk.END, m + &quot;\n&quot;); self.log_txt.see(tk.END)
+
+    def pick(self):
+        f = filedialog.askopenfilename();
+        if f: self.e_in.delete(0, tk.END); self.e_in.insert(0, f)
+
+    def upd(self):
+        if self.v_src.get() == &quot;direct&quot;:
+            self.b_file.config(state=&quot;normal&quot;); self.e_l.config(state=&quot;disabled&quot;); self.v_strict.set(False)
+        else:
+            self.b_file.config(state=&quot;disabled&quot;); self.e_l.config(state=&quot;normal&quot;)
+
+    def run(self):
+        params = {
+            'query': self.e_in.get(), 'source': self.v_src.get(), 'langs': self.e_l.get().split(','),
+            'tor': self.v_tor.get(), 'visible': self.v_vis.get(), 'trans': self.v_tr.get(),
+            'smart': self.v_sm.get(), 'strict': self.v_strict.get(),
+            'mode_depth': int(self.cb_mode.get().split(&quot;:&quot;)[0]),
+            'recursive': self.v_rec.get(), 'target_valid': int(self.s_valid.get())
+        }
+        w = UniversalCrawlerWorker(self.app.app_config, self.log)
+        threading.Thread(target=w.run, args=(params,), daemon=True).start()
+
+
+class VisuTab(ttk.Frame):
+    def __init__(self, parent, app):
+        super().__init__(parent);
+        self.app = app;
+        self.df = None;
+        self.setup_ui()
+
+    def setup_ui(self):
+        top = ttk.Frame(self);
+        top.pack(fill=&quot;x&quot;, padx=10);
+        ttk.Button(top, text=&quot;Laden&quot;, command=self.load).pack(side=&quot;left&quot;)
+        self.nb = ttk.Notebook(self);
+        self.nb.pack(fill=&quot;both&quot;, expand=True)
+        self.tab_tbl = ttk.Frame(self.nb);
+        self.nb.add(self.tab_tbl, text=&quot;Tabelle&quot;)
+
+        tbl_frame = ttk.Frame(self.tab_tbl);
+        tbl_frame.pack(fill=&quot;both&quot;, expand=True)
+        self.tree = ttk.Treeview(tbl_frame, columns=(&quot;ID&quot;, &quot;PID&quot;, &quot;URL&quot;, &quot;Title&quot;), show=&quot;headings&quot;);
+        self.tree.pack(side=&quot;left&quot;, fill=&quot;both&quot;, expand=True)
+        sc = ttk.Scrollbar(tbl_frame, orient=&quot;vertical&quot;, command=self.tree.yview);
+        sc.pack(side=&quot;right&quot;, fill=&quot;y&quot;);
+        self.tree.configure(yscroll=sc.set)
+        for c in (&quot;ID&quot;, &quot;PID&quot;, &quot;URL&quot;, &quot;Title&quot;): self.tree.heading(c, text=c)
+        self.tree.bind(&quot;&lt;&lt;TreeviewSelect&gt;&gt;&quot;, self.on_tbl_sel)
+
+        self.ctx_menu = Menu(self, tearoff=0)
+        self.ctx_menu.add_command(label=&quot;Deep Crawl (mit Keyword)&quot;, command=lambda: self.launch_deep(True))
+        self.ctx_menu.add_command(label=&quot;Sitemap / Full Scan (ohne Keyword)&quot;, command=lambda: self.launch_deep(False))
+        self.tree.bind(&quot;&lt;Button-3&gt;&quot;, self.show_ctx)
+
+        self.txt_preview = scrolledtext.ScrolledText(self.tab_tbl, height=10, bg=&quot;#eee&quot;);
+        self.txt_preview.pack(fill=&quot;x&quot;, padx=5, pady=5)
+        self.tab_graph = ttk.Frame(self.nb);
+        self.nb.add(self.tab_graph, text=&quot;Baum-Graph&quot;)
+        self.canv = ttk.Frame(self.tab_graph);
+        self.canv.pack(fill=&quot;both&quot;, expand=True)
+
+    def load(self):
+        db = DatabaseManager(None, self.app.app_config);
+        conn = db.get_conn_pandas()
+        if not conn: return
+        self.df = pd.read_sql(
+            &quot;SELECT id, parent_id, url, title, raw_content FROM crawled_data ORDER BY id DESC LIMIT 500&quot;, conn);
+        conn.close()
+
+        # --- FIX: NAN IN IDS ---
+        # Parent ID NaN zu 0 (Root) konvertieren und alles zu Int machen
+        self.df['parent_id'] = self.df['parent_id'].fillna(0).astype(int)
+        self.df['id'] = self.df['id'].astype(int)
+
+        for i in self.tree.get_children(): self.tree.delete(i)
+        for _, r in self.df.iterrows(): self.tree.insert(&quot;&quot;, &quot;end&quot;,
+                                                         values=(r['id'], r['parent_id'], r['url'], r['title']))
+        self.draw_graph(self.df)
+
+    def show_ctx(self, event):
+        item = self.tree.identify_row(event.y)
+        if item:
+            self.tree.selection_set(item);
+            self.ctx_menu.post(event.x_root, event.y_root)
+
+    def launch_deep(self, use_keyword):
+        sel = self.tree.selection()
+        if not sel: return
+        vals = self.tree.item(sel[0])['values']
+        url = vals[2]
+        crawler_tab = self.app.tabs_map[&quot;crawler&quot;]
+        crawler_tab.e_in.delete(0, tk.END);
+        crawler_tab.e_in.insert(0, url)
+        crawler_tab.v_src.set(&quot;direct&quot;);
+        crawler_tab.upd()
+        crawler_tab.cb_mode.current(4)
+        crawler_tab.v_rec.set(True)
+        crawler_tab.v_strict.set(use_keyword)
+        self.app.nb.select(crawler_tab)
+        messagebox.showinfo(&quot;Deep Crawl&quot;, f&quot;URL übernommen: {url}\nModus wurde eingestellt.\nBitte 'STARTEN' klicken.&quot;)
+
+    def on_tbl_sel(self, e):
+        sel = self.tree.selection()
+        if not sel: return
+        iid = self.tree.item(sel[0])['values'][0]
+        # Sicherstellen, dass Vergleichstypen stimmen (int vs int)
+        row = self.df[self.df['id'] == int(iid)].iloc[0]
+        self.txt_preview.delete(&quot;1.0&quot;, tk.END);
+        self.txt_preview.insert(tk.END, row['raw_content'] or &quot;&quot;)
+
+    def draw_graph(self, df):
+        for w in self.canv.winfo_children(): w.destroy()
+        G = nx.DiGraph();
+        node_map = {}
+        for _, r in df.iterrows():
+            G.add_node(r['id']);
+            node_map[r['id']] = r['url']
+            if r['parent_id'] and r['parent_id'] &gt; 0: 
+                G.add_edge(r['parent_id'], r['id'])
+
+        fig, ax = plt.subplots(figsize=(6, 5));
+        # Layout etwas spreizen
+        pos = nx.spring_layout(G, k=0.5, iterations=50)
+        nodes = nx.draw_networkx_nodes(G, pos, ax=ax, node_size=100, node_color='skyblue')
+        nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.5, arrows=True)
+        annot = ax.annotate(&quot;&quot;, xy=(0, 0), xytext=(10, 10), textcoords=&quot;offset points&quot;,
+                            bbox=dict(boxstyle=&quot;round&quot;, fc=&quot;w&quot;), arrowprops=dict(arrowstyle=&quot;-&gt;&quot;));
+        annot.set_visible(False)
+
+        def update_annot(ind):
+            idx = ind[&quot;ind&quot;][0];
+            nid = list(G.nodes())[idx];
+            url = node_map.get(nid, &quot;?&quot;)
+            annot.xy = pos[nid];
+            annot.set_text(f&quot;ID {nid}\n{url}&quot;)
+
+        def hover(event):
+            vis = annot.get_visible()
+            if event.inaxes == ax:
+                cont, ind = nodes.contains(event)
+                if cont:
+                    update_annot(ind); annot.set_visible(True); fig.canvas.draw_idle()
+                else:
+                    if vis: annot.set_visible(False); fig.canvas.draw_idle()
+
+        fig.canvas.mpl_connect(&quot;motion_notify_event&quot;, hover)
+        c = FigureCanvasTkAgg(fig, master=self.canv);
+        c.draw();
+        c.get_tk_widget().pack(fill=&quot;both&quot;, expand=True)
+
+
+class GeminiTab(ttk.Frame):
+    def __init__(self, parent, app):
+        super().__init__(parent);
+        self.app = app;
+        self.setup_ui()
+
+    def setup_ui(self):
+        if not CRAWL4AI_AVAILABLE:
+            ttk.Label(self, text=&quot;Crawl4AI fehlt.&quot;, fg=&quot;red&quot;).pack(pady=20)
+            return
+        lbl = tk.Label(self, text=&quot;Gemini URLs:&quot;, font=(&quot;Segoe UI&quot;, 11, &quot;bold&quot;));
+        lbl.pack(anchor=&quot;w&quot;, padx=20, pady=(20, 5))
+        self.url_input = scrolledtext.ScrolledText(self, height=10);
+        self.url_input.pack(fill=&quot;x&quot;, padx=20)
+        self.headless_var = tk.BooleanVar(value=False);
+        tk.Checkbutton(self, text=&quot;Headless&quot;, variable=self.headless_var).pack(anchor=&quot;w&quot;, padx=20)
+        btn = tk.Button(self, text=&quot;START GEMINI&quot;, command=self.start_thread, bg=&quot;#d32f2f&quot;, fg=&quot;white&quot;, height=2);
+        btn.pack(fill=&quot;x&quot;, padx=20, pady=20)
+        self.log_area = scrolledtext.ScrolledText(self, height=12, bg=&quot;#1e1e1e&quot;, fg=&quot;#00ff00&quot;);
+        self.log_area.pack(fill=&quot;x&quot;, side=&quot;bottom&quot;, padx=10, pady=10)
+        if os.path.exists(&quot;urls.txt&quot;):
+            with open(&quot;urls.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f: self.url_input.insert(&quot;1.0&quot;, f.read())
+
+    def log(self, msg):
+        self.log_area.insert(tk.END, f&quot;[{datetime.now().strftime('%H:%M:%S')}] {msg}\n&quot;); self.log_area.see(tk.END)
+
+    def start_thread(self):
+        urls = self.url_input.get(&quot;1.0&quot;, tk.END).strip().splitlines()
+        urls = [u.strip() for u in urls if &quot;gemini.google.com&quot; in u]
+        if not urls: messagebox.showerror(&quot;Fehler&quot;, &quot;Keine URLs.&quot;); return
+        threading.Thread(target=self.run_async, args=(urls,), daemon=True).start()
+
+    def run_async(self, urls):
+        try:
+            asyncio.run(self.crawl_process(urls))
+        except Exception as e:
+            self.log(f&quot;Error: {e}&quot;)
+
+    async def crawl_process(self, urls):
+        self.log(&quot;Starte Crawl4AI...&quot;)
+        js_scroll = &quot;window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;&quot;
+        out = &quot;crawl_results&quot;;
+        os.makedirs(out, exist_ok=True);
+        sc_dir = os.path.join(out, &quot;screenshots&quot;);
+        os.makedirs(sc_dir, exist_ok=True)
+        b_cfg = BrowserConfig(verbose=True, headless=self.headless_var.get(), user_data_dir=CHROME_USER_DATA_DIR,
+                              use_managed_browser=True)
+        r_cfg = CrawlerRunConfig(cache_mode=CacheMode.BYPASS, js_code=js_scroll, wait_for=&quot;share-viewer&quot;,
+                                 screenshot=True, magic=True)
+        data = []
+        async with AsyncWebCrawler(config=b_cfg) as crawler:
+            for i, url in enumerate(urls):
+                self.log(f&quot;Lade {url}...&quot;)
+                res = await crawler.arun(url=url, config=r_cfg)
+                if not res.success: self.log(f&quot;Fehler: {res.error_message}&quot;); continue
+                spath = None
+                if res.screenshot:
+                    sdata = base64.b64decode(res.screenshot)
+                    fname = f&quot;chat_{int(datetime.now().timestamp())}_{i}.png&quot;;
+                    spath = os.path.join(sc_dir, fname)
+                    with open(spath, &quot;wb&quot;) as f: f.write(sdata)
+                cdata = self.parse_html(res.html, url);
+                cdata['screenshot_path'] = spath
+                data.append(cdata);
+                self.log(f&quot;OK: {len(cdata['turns'])} Turns.&quot;)
+                await asyncio.sleep(2)
+        self.app.root.after(0, lambda: ReviewWindow(self.app.root, data, self.save_report))
+
+    def clean_html(self, el):
+        if not el: return &quot;&quot;
+        for s in [&quot;script&quot;, &quot;iframe&quot;, &quot;noscript&quot;, &quot;svg&quot;, &quot;style&quot;]:
+            for t in el.select(s): t.decompose()
+        return el.decode_contents()
+
+    def parse_html(self, html_c, url):
+        soup = BeautifulSoup(html_c, 'html.parser')
+        main = soup.find('share-viewer') or soup.find('main') or soup.body
+        date = datetime.now().strftime('%d.%m.%Y');
+        turns = []
+        if main:
+            processed = set();
+            block = []
+            for el in main.find_all(True):
+                if el in processed: continue
+                cls = el.get(&quot;class&quot;, []) or []
+                if 'user-query-bubble-with-background' in cls or el.name == 'user-query-container':
+                    if block: turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;,
+                                            &quot;text&quot;: chr(10).join(block)}); block = []
+                    processed.add(el);
+                    [processed.add(c) for c in el.find_all(True)]
+                    turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: self.clean_html(el), &quot;text&quot;: el.get_text()})
+                elif 'query-text-line' in cls:
+                    processed.add(el);
+                    block.append(el.get_text())
+                elif 'message-content' in cls or (
+                        el.has_attr('data-test-id') and el['data-test-id'] == 'model-response'):
+                    if block: turns.append({&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;,
+                                            &quot;text&quot;: chr(10).join(block)}); block = []
+                    processed.add(el);
+                    [processed.add(c) for c in el.find_all(True)]
+                    turns.append({&quot;role&quot;: &quot;MODEL&quot;, &quot;html&quot;: self.clean_html(el), &quot;text&quot;: el.get_text()})
+            if block: turns.append(
+                {&quot;role&quot;: &quot;USER&quot;, &quot;html&quot;: f&quot;&lt;pre&gt;{chr(10).join(block)}&lt;/pre&gt;&quot;, &quot;text&quot;: chr(10).join(block)})
+        t = &quot;Chat Export&quot;;
+        h1 = soup.find('h1')
+        if h1: t = h1.get_text().strip()
+        return {&quot;title&quot;: t, &quot;url&quot;: url, &quot;chat_date&quot;: date, &quot;turns&quot;: turns}
+
+    def save_report(self, data):
+        p = filedialog.asksaveasfilename(defaultextension=&quot;.html&quot;, filetypes=[(&quot;HTML&quot;, &quot;*.html&quot;)])
+        if not p: return
+        css = &quot;body{font-family:sans-serif;padding:20px;background:#eee}.chat{background:white;padding:20px;margin-bottom:20px;border-radius:8px}.role-USER{background:#e3f2fd;padding:15px;margin:10px 0;border-left:5px solid #2196f3}.role-MODEL{background:#fff;padding:15px;margin:10px 0;border-left:5px solid #4caf50}img.screenshot{max-width:100%;border:1px solid #ccc;margin-top:10px}pre{background:#222;color:#fff;padding:10px;overflow-x:auto}&quot;
+        h = f&quot;&lt;html&gt;&lt;head&gt;&lt;meta charset='utf-8'&gt;&lt;style&gt;{css}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Gemini Archiv&lt;/h1&gt;&quot;
+        for c in data:
+            scr = f&quot;&lt;br&gt;&lt;b&gt;Beweis:&lt;/b&gt;&lt;br&gt;&lt;img class='screenshot' src='file:///{c['screenshot_path'].replace(os.sep, '/')}' /&gt;&quot; if c.get(
+                'screenshot_path') else &quot;&quot;
+            h += f&quot;&lt;div class='chat'&gt;&lt;h2&gt;{c['title']}&lt;/h2&gt;&lt;p&gt;{c['url']} | {c['chat_date']}&lt;/p&gt;&quot;
+            for t in c['turns']: h += f&quot;&lt;div class='role-{t['role']}'&gt;&lt;b&gt;{t['role']}&lt;/b&gt;&lt;br&gt;{t['html']}&lt;/div&gt;&quot;
+            h += scr + &quot;&lt;/div&gt;&quot;
+        h += &quot;&lt;/body&gt;&lt;/html&gt;&quot;
+        with open(p, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+            f.write(h)
+        messagebox.showinfo(&quot;OK&quot;, f&quot;Gespeichert: {p}&quot;)
+
+
+class SettingsDialog(tk.Toplevel):
+    def __init__(self, p, c, cb):
+        super().__init__(p);
+        self.cb = cb;
+        self.entries = {}
+        for i, k in enumerate([&quot;db_host&quot;, &quot;db_port&quot;, &quot;db_user&quot;, &quot;db_password&quot;, &quot;db_name&quot;, &quot;tor_port&quot;]):
+            ttk.Label(self, text=k).grid(row=i, column=0);
+            e = ttk.Entry(self);
+            e.insert(0, c.get(k, &quot;&quot;));
+            e.grid(row=i, column=1)
+            if &quot;pass&quot; in k: e.config(show=&quot;*&quot;)
+            self.entries[k] = e
+        ttk.Button(self, text=&quot;Speichern&quot;, command=self.save).grid(row=99, columnspan=2)
+
+    def save(self):
+        d = {k: v.get().strip() for k, v in self.entries.items()};
+        save_config_to_file(d);
+        self.cb(d);
+        self.destroy()
+
+
+class MainApp:
+    def __init__(self, root):
+        self.root = root;
+        self.root.title(&quot;Universal Web Spider v20.1 (Syntax Cleaned)&quot;)
+        self.root.geometry(&quot;1200x850&quot;)
+        self.app_config = load_config()
+        m = Menu(root);
+        root.config(menu=m);
+        fm = Menu(m, tearoff=0);
+        m.add_cascade(label=&quot;Datei&quot;, menu=fm)
+        fm.add_command(label=&quot;Einstellungen&quot;, command=self.settings)
+
+        self.nb = ttk.Notebook(root);
+        self.nb.pack(fill=&quot;both&quot;, expand=True)
+        # Tab References
+        self.tabs_map = {}
+        self.tabs_map[&quot;crawler&quot;] = UniversalCrawlerTab(self.nb, self)
+
+        self.nb.add(self.tabs_map[&quot;crawler&quot;], text=&quot;🕷️ Smart Crawler &amp; Harvester&quot;)
+        self.nb.add(VisuTab(self.nb, self), text=&quot;🌳 Daten &amp; Visu&quot;)
+        self.nb.add(GeminiTab(self.nb, self), text=&quot;♊ Gemini Crawler&quot;)
+
+    def settings(self): SettingsDialog(self.root, self.app_config, self.update_conf)
+
+    def update_conf(self, nc): self.app_config = nc; messagebox.showinfo(&quot;OK&quot;, &quot;Gespeichert.&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    root = tk.Tk();
+    MainApp(root);
+    root.mainloop()
+</code></pre></div></div></div></div></div></div></div></body></html>
