@@ -1,0 +1,13 @@
+# requirements.txt
+# Version: 4.0
+playwright
+mysql-connector-python
+trafilatura
+beautifulsoup4
+lxml
+requests
+fake-useragent
+weasyprint
+markdown
+markdownify
+pypdf

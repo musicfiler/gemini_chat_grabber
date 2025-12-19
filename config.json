@@ -1,0 +1,9 @@
+{
+    "db_host": "localhost",
+    "db_user": "root",
+    "db_password": "",
+    "db_name": "web_crawl_v32",
+    "browser_visible": true,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "cookie_file": "auth_state.json"
+}
