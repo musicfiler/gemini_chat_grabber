@@ -3,6 +3,9 @@ Automated exporter for Google Gemini chats. Converts shared chat URLs into offli
 
 License: This work is licensed under the Creative Commons BY NC ND License (https://creativecommons.org/licenses/by-nc-nd/4.0/), please see LICENSE File for further information.
 
+## Provided by it-ruhrig.de
+https://it-ruhrig.de/blog/portfolio/Gemini-Chat-Grabber
+
 # Prerequirements:
 Python 3.12
 
