@@ -3,3 +3,4 @@
 /gemini_browser_profile
 urls*.txt
 *.exe
+auth_state.json
